@@ -1,0 +1,22 @@
+[book]
+authors = ["Reece McMillin"]
+language = "en"
+multilingual = false
+src = "src"
+title = "CS490 - Distributed Systems"
+
+[preprocessor.classy]
+
+[output.html]
+mathjax-support = true
+git-repository-url = "https://github.com/ReeceMcMillin/cs490-notes/"
+curly-quotes = true
+site-url = "https://reecemcmillin.github.io/cs490-notes/html/"
+
+[output.html.fold]
+enable = true
+level = 0
+
+[output.linkcheck]
+warning-policy = "error"
+
