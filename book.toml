@@ -17,6 +17,6 @@ site-url = "https://reecemcmillin.github.io/cs490-notes/html/"
 enable = true
 level = 0
 
-[output.linkcheck]
-warning-policy = "error"
+# [output.linkcheck]
+# warning-policy = "error"
 
