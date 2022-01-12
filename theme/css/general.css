@@ -41,8 +41,12 @@ h1 code, h2 code, h3 code, h4 code, h5 code, h6 code {
 .hide-boring .boring { display: none; }
 .hidden { display: none !important; }
 
-h2, h3 { margin-top: 2.5em; }
-h4, h5 { margin-top: 2em; }
+h2, h3 { margin-top: 1.5em; }
+h4, h5 { margin-top: 1em; }
+
+h1, h2, h3, h4, h5 {
+    text-align: center;
+}
 
 .header + .header h3,
 .header + .header h4,
@@ -199,13 +203,16 @@ blockquote {
 }
 
 .note p {
+    border-top: 1px solid black;
     margin: 0px;
+    margin-top: 10px;
+    padding-top: 10px;
 }
 
 .def::before {
     content: "Definition";
     font-size: 3rem;
-    padding-bottom: 0px;
+    padding-bottom: 5px;
 }
 
 .def {
@@ -216,6 +223,25 @@ blockquote {
 }
 
 .def p {
+    border-top: 1px solid black;
     margin: 0px;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+ul {
+    margin: 5px;
+}
+
+p {
+    margin-bottom: 0px;
+}
+
+div .div::before {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    content: "•";
+    width: 100%;
 }
 
