@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Summary - CS490 - Distributed Systems</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="../index.html">CS490 - Distributed Systems</a></li><li class="chapter-item expanded "><a href="../book.html"><strong aria-hidden="true">1.</strong> Book</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../chapter-1/index.html"><strong aria-hidden="true">1.1.</strong> Characterization of Distributed Systems</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../chapter-1/introduction.html"><strong aria-hidden="true">1.1.1.</strong> Introduction</a></li><li class="chapter-item "><a href="../chapter-1/examples.html"><strong aria-hidden="true">1.1.2.</strong> Examples of Distributed Systems</a></li><li class="chapter-item "><a href="../chapter-1/trends.html"><strong aria-hidden="true">1.1.3.</strong> Trends in Distributed Systems</a></li><li class="chapter-item "><a href="../chapter-1/resource-sharing.html"><strong aria-hidden="true">1.1.4.</strong> Focus on Resource Sharing</a></li><li class="chapter-item "><a href="../chapter-1/challenges.html"><strong aria-hidden="true">1.1.5.</strong> Challenges</a></li><li class="chapter-item "><a href="../chapter-1/case-study.html"><strong aria-hidden="true">1.1.6.</strong> Case Study: The World Wide Web</a></li><li class="chapter-item "><a href="../chapter-1/summary.html"><strong aria-hidden="true">1.1.7.</strong> Summary</a></li></ol></li><li class="chapter-item "><a href="../chapter-2/index.html"><strong aria-hidden="true">1.2.</strong> System Models</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../chapter-2/introduction.html"><strong aria-hidden="true">1.2.1.</strong> Introduction</a></li><li class="chapter-item "><a href="../chapter-2/physical-models.html"><strong aria-hidden="true">1.2.2.</strong> Physical Models</a></li><li class="chapter-item "><a href="../chapter-2/architectural-models.html"><strong aria-hidden="true">1.2.3.</strong> Architectural Models</a></li><li class="chapter-item "><a href="../chapter-2/fundamental-models.html"><strong aria-hidden="true">1.2.4.</strong> Fundamental Models</a></li><li class="chapter-item "><a href="../chapter-2/summary.html"><strong aria-hidden="true">1.2.5.</strong> Summary</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">1.3.</strong> Networking and Internetworking</div></li><li class="chapter-item "><a href="../chapter-4/index.html"><strong aria-hidden="true">1.4.</strong> Interprocess Communication</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../chapter-4/introduction.html"><strong aria-hidden="true">1.4.1.</strong> Introduction</a></li><li class="chapter-item "><a href="../chapter-4/api-internet.html"><strong aria-hidden="true">1.4.2.</strong> The API for the Internet Protocols</a></li><li class="chapter-item "><a href="../chapter-4/marshalling.html"><strong aria-hidden="true">1.4.3.</strong> External Data Representation &amp; Marshalling</a></li><li class="chapter-item "><a href="../chapter-4/multicast.html"><strong aria-hidden="true">1.4.4.</strong> Multicast Communication</a></li><li class="chapter-item "><a href="../chapter-4/network-virtualization.html"><strong aria-hidden="true">1.4.5.</strong> Network Virtualization: Overlay Networks</a></li><li class="chapter-item "><a href="../chapter-4/case-study.html"><strong aria-hidden="true">1.4.6.</strong> Case Study: MPI</a></li><li class="chapter-item "><a href="../chapter-4/summary.html"><strong aria-hidden="true">1.4.7.</strong> Summary</a></li></ol></li><li class="chapter-item "><a href="../chapter-5/index.html"><strong aria-hidden="true">1.5.</strong> Remote Invocation</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../chapter-5/introduction.html"><strong aria-hidden="true">1.5.1.</strong> Introduction</a></li><li class="chapter-item "><a href="../chapter-5/request-reply.html"><strong aria-hidden="true">1.5.2.</strong> Request-Reply Protocols</a></li><li class="chapter-item "><a href="../chapter-5/rpc.html"><strong aria-hidden="true">1.5.3.</strong> Remote Procedure Call</a></li><li class="chapter-item "><a href="../chapter-5/remote-method.html"><strong aria-hidden="true">1.5.4.</strong> Remote Method Invocation</a></li><li class="chapter-item "><a href="../chapter-5/case-study.html"><strong aria-hidden="true">1.5.5.</strong> Case Study: Java RMI</a></li><li class="chapter-item "><a href="../chapter-5/summary.html"><strong aria-hidden="true">1.5.6.</strong> Summary</a></li></ol></li><li class="chapter-item expanded "><a href="../chapter-6/index.html"><strong aria-hidden="true">1.6.</strong> Indirect Communication</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../chapter-6/introduction.html"><strong aria-hidden="true">1.6.1.</strong> Introduction</a></li><li class="chapter-item "><a href="../chapter-6/group-communication.html"><strong aria-hidden="true">1.6.2.</strong> Group Communication</a></li><li class="chapter-item "><a href="../chapter-6/pubsub.html"><strong aria-hidden="true">1.6.3.</strong> Publish-Subscribe Systems</a></li><li class="chapter-item "><a href="../chapter-6/message-queues.html"><strong aria-hidden="true">1.6.4.</strong> Message Queues</a></li><li class="chapter-item "><a href="../chapter-6/shared-memory.html"><strong aria-hidden="true">1.6.5.</strong> Shared Memory Approaches</a></li><li class="chapter-item expanded "><a href="../chapter-6/summary.html" class="active"><strong aria-hidden="true">1.6.6.</strong> Summary</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">1.7.</strong> Operating System Support</div></li><li class="chapter-item "><div><strong aria-hidden="true">1.8.</strong> Distributed Objects and Components</div></li><li class="chapter-item "><div><strong aria-hidden="true">1.9.</strong> Web Services</div></li><li class="chapter-item "><a href="../chapter-10/index.html"><strong aria-hidden="true">1.10.</strong> P2P Systems</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../chapter-10/introduction.html"><strong aria-hidden="true">1.10.1.</strong> Introduction</a></li><li class="chapter-item "><a href="../chapter-10/napster.html"><strong aria-hidden="true">1.10.2.</strong> Napster and its Legacy</a></li><li class="chapter-item "><a href="../chapter-10/middleware.html"><strong aria-hidden="true">1.10.3.</strong> P2P Middleware</a></li><li class="chapter-item "><a href="../chapter-10/overlays.html"><strong aria-hidden="true">1.10.4.</strong> Routing Overlays</a></li><li class="chapter-item "><a href="../chapter-10/overlay-case-studies.html"><strong aria-hidden="true">1.10.5.</strong> Overlay Case Studies: Pastry, Tapestry</a></li><li class="chapter-item "><a href="../chapter-10/application-case-studies.html"><strong aria-hidden="true">1.10.6.</strong> Application Case Studies: Squirrel, OceanStore, Ivy</a></li><li class="chapter-item "><a href="../chapter-10/summary.html"><strong aria-hidden="true">1.10.7.</strong> Summary</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">1.11.</strong> Security</div></li><li class="chapter-item "><a href="../chapter-12/index.html"><strong aria-hidden="true">1.12.</strong> Distributed File Systems</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../chapter-12/introduction.html"><strong aria-hidden="true">1.12.1.</strong> Introduction</a></li><li class="chapter-item "><a href="../chapter-12/file-service-architecture.html"><strong aria-hidden="true">1.12.2.</strong> File Service Architecture</a></li><li class="chapter-item "><a href="../chapter-12/sun-network-file-system.html"><strong aria-hidden="true">1.12.3.</strong> Case Study: Sun Network File System</a></li><li class="chapter-item "><a href="../chapter-12/andrew-file-system.html"><strong aria-hidden="true">1.12.4.</strong> Case Study: The Andrew File System</a></li><li class="chapter-item "><a href="../chapter-12/enhancements.html"><strong aria-hidden="true">1.12.5.</strong> Enhancements &amp; Further Developments</a></li><li class="chapter-item "><a href="../chapter-12/summary.html"><strong aria-hidden="true">1.12.6.</strong> Summary</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">1.13.</strong> Name Services</div></li><li class="chapter-item "><a href="../chapter-14/index.html"><strong aria-hidden="true">1.14.</strong> Time and Global States</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../chapter-14/introduction.html"><strong aria-hidden="true">1.14.1.</strong> Introduction</a></li><li class="chapter-item "><a href="../chapter-14/clocks.html"><strong aria-hidden="true">1.14.2.</strong> Clocks, Events, and Process States</a></li><li class="chapter-item "><a href="../chapter-14/clocks.html"><strong aria-hidden="true">1.14.3.</strong> Synchronizing Physical Clocks</a></li><li class="chapter-item "><a href="../chapter-14/logical-time.html"><strong aria-hidden="true">1.14.4.</strong> Logical Time &amp; Logical Clocks</a></li><li class="chapter-item "><a href="../chapter-14/global-states.html"><strong aria-hidden="true">1.14.5.</strong> Global States</a></li><li class="chapter-item "><a href="../chapter-14/distributed-debugging.html"><strong aria-hidden="true">1.14.6.</strong> Distributed Debugging</a></li><li class="chapter-item "><a href="../chapter-14/summary.html"><strong aria-hidden="true">1.14.7.</strong> Summary</a></li></ol></li><li class="chapter-item "><a href="../chapter-15/index.html"><strong aria-hidden="true">1.15.</strong> Coordination and Agreement</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../chapter-15/introduction.html"><strong aria-hidden="true">1.15.1.</strong> Introduction</a></li><li class="chapter-item "><a href="../chapter-15/distributed-exclusion.html"><strong aria-hidden="true">1.15.2.</strong> Distributed Mutual Exclusion</a></li><li class="chapter-item "><a href="../chapter-15/elections.html"><strong aria-hidden="true">1.15.3.</strong> Elections</a></li><li class="chapter-item "><a href="../chapter-15/coordination.html"><strong aria-hidden="true">1.15.4.</strong> Coordination &amp; Agreement in Group Communication</a></li><li class="chapter-item "><a href="../chapter-15/consensus.html"><strong aria-hidden="true">1.15.5.</strong> Consensus &amp; Related Problems</a></li><li class="chapter-item "><a href="../chapter-15/summary.html"><strong aria-hidden="true">1.15.6.</strong> Summary</a></li></ol></li><li class="chapter-item "><a href="../chapter-16/index.html"><strong aria-hidden="true">1.16.</strong> Transactions and Concurrency Control</a></li><li class="chapter-item "><a href="../chapter-17/index.html"><strong aria-hidden="true">1.17.</strong> Distributed Transactions</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../chapter-17/introduction.html"><strong aria-hidden="true">1.17.1.</strong> Introduction</a></li><li class="chapter-item "><a href="../chapter-17/flat-nested-transactions.html"><strong aria-hidden="true">1.17.2.</strong> Flat &amp; Nested Distributed Transactions</a></li><li class="chapter-item "><a href="../chapter-17/atomic-commit-protocols.html"><strong aria-hidden="true">1.17.3.</strong> Atomic Commit Protocols</a></li><li class="chapter-item "><a href="../chapter-17/concurrency-control.html"><strong aria-hidden="true">1.17.4.</strong> Concurrency Control in Distributed Transactions</a></li><li class="chapter-item "><a href="../chapter-17/distributed-deadlocks.html"><strong aria-hidden="true">1.17.5.</strong> Distributed Deadlocks</a></li><li class="chapter-item "><a href="../chapter-17/transaction-recovery.html"><strong aria-hidden="true">1.17.6.</strong> Transaction Recovery</a></li><li class="chapter-item "><a href="../chapter-17/summary.html"><strong aria-hidden="true">1.17.7.</strong> Summary</a></li></ol></li><li class="chapter-item "><a href="../chapter-18/index.html"><strong aria-hidden="true">1.18.</strong> Replication</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../chapter-18/introduction.html"><strong aria-hidden="true">1.18.1.</strong> Introduction</a></li><li class="chapter-item "><a href="../chapter-18/system-model.html"><strong aria-hidden="true">1.18.2.</strong> System Model and the Role of Group Communication</a></li><li class="chapter-item "><a href="../chapter-18/fault-tolerance.html"><strong aria-hidden="true">1.18.3.</strong> Fault-Tolerant Services</a></li><li class="chapter-item "><a href="../chapter-18/case-studies.html"><strong aria-hidden="true">1.18.4.</strong> Case Studies: Gossip, Bayou, Coda</a></li><li class="chapter-item "><a href="../chapter-18/transactions-replicated.html"><strong aria-hidden="true">1.18.5.</strong> Transactions with Replicated Data</a></li><li class="chapter-item "><a href="../chapter-18/summary.html"><strong aria-hidden="true">1.18.6.</strong> Summary</a></li></ol></li><li class="chapter-item "><a href="../chapter-19/index.html"><strong aria-hidden="true">1.19.</strong> Mobile and Ubiquitous Computing</a></li><li class="chapter-item "><a href="../chapter-20/index.html"><strong aria-hidden="true">1.20.</strong> Distributed Multimedia Systems</a></li><li class="chapter-item "><a href="../chapter-21/index.html"><strong aria-hidden="true">1.21.</strong> Designing Distributed Systems - Google Case Study</a></li><li class="spacer"></li></ol></li><li class="chapter-item "><a href="../lectures/index.html"><strong aria-hidden="true">2.</strong> Lectures</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../lectures/week1.html"><strong aria-hidden="true">2.1.</strong> Characterization of Distributed Systems</a></li><li class="chapter-item "><a href="../lectures/week2.html"><strong aria-hidden="true">2.2.</strong> IPC and Remote Invocation</a></li><li class="chapter-item "><a href="../lectures/week3.html"><strong aria-hidden="true">2.3.</strong> Indirect Communication</a></li><li class="chapter-item "><a href="../lectures/week4.html"><strong aria-hidden="true">2.4.</strong> Notion of Time in Distributed Computing</a></li><li class="chapter-item "><a href="../lectures/week5.html"><strong aria-hidden="true">2.5.</strong> Logical Clocks, Global States</a></li><li class="chapter-item "><a href="../lectures/week6.html"><strong aria-hidden="true">2.6.</strong> Distributed Algorithms - Mutual Exclusion</a></li><li class="chapter-item "><a href="../lectures/week7.html"><strong aria-hidden="true">2.7.</strong> Distributed Algorithms - Leader Election</a></li><li class="chapter-item "><a href="../lectures/week8.html"><strong aria-hidden="true">2.8.</strong> Distributed Coordination - Group Communication</a></li><li class="chapter-item "><a href="../lectures/week9.html"><strong aria-hidden="true">2.9.</strong> Distributed Coordination - Consensus</a></li><li class="chapter-item "><a href="../lectures/week10.html"><strong aria-hidden="true">2.10.</strong> Distributed File Systems</a></li><li class="chapter-item "><a href="../lectures/week11.html"><strong aria-hidden="true">2.11.</strong> Spring Break</a></li><li class="chapter-item "><a href="../lectures/week12.html"><strong aria-hidden="true">2.12.</strong> Distributed Transactions</a></li><li class="chapter-item "><a href="../lectures/week13.html"><strong aria-hidden="true">2.13.</strong> Replication</a></li><li class="chapter-item "><a href="../lectures/week14.html"><strong aria-hidden="true">2.14.</strong> P2P Systems</a></li><li class="chapter-item "><a href="../lectures/week15.html"><strong aria-hidden="true">2.15.</strong> Distributed System Case-Study</a></li><li class="chapter-item "><a href="../lectures/week16.html"><strong aria-hidden="true">2.16.</strong> Final Exam</a></li><li class="spacer"></li></ol></li><li class="chapter-item "><a href="../exercises/index.html"><strong aria-hidden="true">3.</strong> Exercises</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../exercises/chapter-1.html"><strong aria-hidden="true">3.1.</strong> Chapter 1</a></li><li class="chapter-item "><a href="../exercises/chapter-2.html"><strong aria-hidden="true">3.2.</strong> Chapter 2</a></li><li class="chapter-item "><div><strong aria-hidden="true">3.3.</strong> Chapter 3</div></li><li class="chapter-item "><a href="../exercises/chapter-4.html"><strong aria-hidden="true">3.4.</strong> Chapter 4</a></li><li class="chapter-item "><a href="../exercises/chapter-5.html"><strong aria-hidden="true">3.5.</strong> Chapter 5</a></li><li class="chapter-item "><a href="../exercises/chapter-6.html"><strong aria-hidden="true">3.6.</strong> Chapter 6</a></li><li class="chapter-item "><div><strong aria-hidden="true">3.7.</strong> Chapter 7</div></li><li class="chapter-item "><div><strong aria-hidden="true">3.8.</strong> Chapter 8</div></li><li class="chapter-item "><div><strong aria-hidden="true">3.9.</strong> Chapter 9</div></li><li class="chapter-item "><a href="../exercises/chapter-10.html"><strong aria-hidden="true">3.10.</strong> Chapter 10</a></li><li class="chapter-item "><div><strong aria-hidden="true">3.11.</strong> Chapter 11</div></li><li class="chapter-item "><a href="../exercises/chapter-12.html"><strong aria-hidden="true">3.12.</strong> Chapter 12</a></li><li class="chapter-item "><div><strong aria-hidden="true">3.13.</strong> Chapter 13</div></li><li class="chapter-item "><a href="../exercises/chapter-14.html"><strong aria-hidden="true">3.14.</strong> Chapter 14</a></li><li class="chapter-item "><a href="../exercises/chapter-15.html"><strong aria-hidden="true">3.15.</strong> Chapter 15</a></li><li class="chapter-item "><a href="../exercises/chapter-16.html"><strong aria-hidden="true">3.16.</strong> Chapter 16</a></li><li class="chapter-item "><a href="../exercises/chapter-17.html"><strong aria-hidden="true">3.17.</strong> Chapter 17</a></li><li class="chapter-item "><a href="../exercises/chapter-18.html"><strong aria-hidden="true">3.18.</strong> Chapter 18</a></li><li class="chapter-item "><a href="../exercises/chapter-19.html"><strong aria-hidden="true">3.19.</strong> Chapter 19</a></li><li class="chapter-item "><a href="../exercises/chapter-20.html"><strong aria-hidden="true">3.20.</strong> Chapter 20</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">CS490 - Distributed Systems</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/ReeceMcMillin/cs490-notes/" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="summary"><a class="header" href="#summary">Summary</a></h1>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../chapter-6/shared-memory.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../chapter-10/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../chapter-6/shared-memory.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../chapter-10/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
