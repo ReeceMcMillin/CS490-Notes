@@ -203,7 +203,7 @@ blockquote {
 }
 
 .note p {
-    border-top: 1px solid black;
+    border-top: 1px solid var(--fg);
     margin: 0px;
     margin-top: 10px;
     padding-top: 10px;
@@ -223,10 +223,11 @@ blockquote {
 }
 
 .def p {
-    border-top: 1px solid black;
+    border-top: 1px solid var(--fg);
     margin: 0px;
     margin-top: 10px;
     padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 ul {
@@ -234,6 +235,7 @@ ul {
 }
 
 p {
+    margin-top: 25px;
     margin-bottom: 0px;
 }
 
