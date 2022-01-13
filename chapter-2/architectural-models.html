@@ -140,6 +140,213 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="architectural-models"><a class="header" href="#architectural-models">Architectural Models</a></h1>
+<p>The architecture of a system refers to its separate components and the
+relationships between them.</p>
+<p>Major concerns: make the system</p>
+<ul>
+<li>reliable</li>
+<li>manageable</li>
+<li>adaptable</li>
+<li>cost-effective</li>
+</ul>
+<p>Understanding the trade-offs inherent to choices similar to those identified in this
+section is arguably the key skill in distributed systems design.</p>
+<h2 id="architectural-elements"><a class="header" href="#architectural-elements">Architectural Elements</a></h2>
+<p>Key questions:</p>
+<ul>
+<li>What are the entities that are communicating in the distributed
+system?</li>
+<li>How do they communicate? More specifically, what <em>communication
+paradigm</em> is used?</li>
+<li>What roles and responsibilities do they have in the overall
+architecture?
+<ul>
+<li>Will they change?</li>
+</ul>
+</li>
+<li>How are they mapped onto the physical distributed infrastructure?
+<ul>
+<li>In other words, what is their <em>placement</em>?</li>
+</ul>
+</li>
+</ul>
+<h3 id="communicating-entities"><a class="header" href="#communicating-entities">Communicating Entities</a></h3>
+<p>The first two questions above are <strong>essential</strong> to an understanding of
+distributed systems. From a system perspective, the entities that
+communicate in a distributed systems are typically <em>processes</em>. This
+leads to the view of a distributed system as processes coupled with
+interprocess communication paradigms.</p>
+<p>From a systems level, this is fine! From a programming perspective, other
+abstractions have been proposed.</p>
+<ul>
+<li>objects
+<ul>
+<li>objects represent natural units of decomposition for some given
+problem domain</li>
+<li>accessed via interfaces</li>
+<li>interface definition language (IDL) provides a specification of
+methods on an object</li>
+<li>a number of problems!</li>
+</ul>
+</li>
+<li>components
+<ul>
+<li>components specify not only interfaces, but also the <em>assumptions</em>
+they make in terms of other components.
+<ul>
+<li>all dependencies are explicit</li>
+<li>contract is more complete</li>
+<li>this approach promotes higher <em>compositionality</em></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>web services
+<ul>
+<li>closely related to objects and components
+<ul>
+<li>approach based on encapsulation and access through interfaces</li>
+<li>represent and discover services through web standards</li>
+</ul>
+</li>
+<li>expanded on in <a href="../chapter-9/index.html">chapter 9</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="communication-paradigms"><a class="header" href="#communication-paradigms">Communication Paradigms</a></h3>
+<p>Three types:</p>
+<ul>
+<li><em>Interprocess communication</em> refers to the low-level support for
+communication between processes in distributed systems, including
+<ul>
+<li>message-passing primitives</li>
+<li>direct access to the API offered by Internet protocols (socket
+programming)</li>
+<li>support for multicast communication</li>
+<li>expanded on in <a href="../chapter-4/index.html">chapter 4</a></li>
+</ul>
+</li>
+<li><em>Remote invocation</em> covers a range of techniques based on a two-way
+exchange between entities in a distributed system
+<ul>
+<li>results in the calling of a remote operation, procedure, or method</li>
+<li>expanded on in <a href="../chapter-5/index.html">chapter 5</a></li>
+</ul>
+</li>
+<li><em>Request-reply protocols</em> are a pattern imposed on an underlying
+message-passing service to support client-server computing.
+<ul>
+<li>primitive, typically only used in embedded systems</li>
+<li>this is the approach used by HTTP</li>
+<li>most DSs will use remote procedure calls or remote method
+invocation</li>
+</ul>
+</li>
+<li><em>Remote procedure calls</em> allow procedures in processes on remote
+computers to be called as if they were processes in the local address
+space.
+<ul>
+<li><strong>access and location transparency</strong></li>
+</ul>
+</li>
+<li><em>Remote method invocation</em> strongly resembles remote procedure calls,
+but for distributed objects.
+<ul>
+<li>calling object can invoke a method in a remote object</li>
+<li>underlying details are hidden from the user</li>
+</ul>
+</li>
+</ul>
+<div class="note">
+<p>All of these techniques have one thing in common:
+communication represents a two-way relationship between a sender and a receiver, with
+senders explicitly direction methods/invocations to the remote
+receivers.</p>
+</div>
+<p>Receivers are typically aware of the identity of senders and both
+typically exist at the same time. There are also indirect methods of
+communication through a third entity allowing for higher decoupling:</p>
+<ul>
+<li><em>space uncoupling</em>: senders don’t need to know who they’re sending to</li>
+<li><em>time uncoupling</em>: senders and receivers do not need to exist at the
+same time</li>
+</ul>
+<p>Key techniques for indirect communication include:</p>
+<ul>
+<li><em>Group communication</em>: delivery of messages to a <em>set</em> of recipients
+<ul>
+<li>relies on the abstraction of a group represented by a group
+identifier</li>
+</ul>
+</li>
+<li><em>Publish-subscribe systems</em>: a large number of producers distribute
+information items of interest to a similarly large number of consumers</li>
+<li><em>Message queues</em>: offer a point-to-point service where producer
+processes send messages to a specific queue, acting as the indirection between
+producers and consumers</li>
+<li><em>Tuple spaces</em>: processes can place arbitrary items of structured data (tuples)
+in a space that can be read or removed by other processes</li>
+<li><em>Distributed shared memory</em>: provide an abstraction for sharing data
+between process that don’t share physical memory
+<ul>
+<li>programmers gain the abstraction of reading or writing shared data
+structures as if they were in their local address space</li>
+<li><strong>distribution transparency</strong></li>
+<li>expanded on in <a href="../chapter-6/index.html">chapter 6</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="roles-and-responsibilities"><a class="header" href="#roles-and-responsibilities">Roles and Responsibilities</a></h3>
+<p>Each process in a distributed system takes on certain roles which
+establish the architectural model.</p>
+<ul>
+<li><em>Client-server</em>: most often cited when distributed systems are
+discussed
+<ul>
+<li>scales poorly</li>
+</ul>
+</li>
+<li><em>Peer-to-peer</em>: no distinction between client and server
+<ul>
+<li>scales naturally with number of users</li>
+<li>applications are composed of large numbers of peer processes
+running on separate computers</li>
+<li>individual computers only hold a small responsibility for service</li>
+</ul>
+</li>
+</ul>
+<h3 id="placement"><a class="header" href="#placement">Placement</a></h3>
+<p>Placement of a given client/server has few universal guidelines and needs to take into account</p>
+<ul>
+<li>patterns of communication between entities</li>
+<li>reliability of given machines and current load</li>
+<li>quality of communication between different machines</li>
+<li>etc.</li>
+</ul>
+<p>To map services to multiple users, a service may be implemented as
+several server processes in separate hosts. The servers may partition
+the set of objects on which the service is based and distribute those
+objects between themselves or replicate copies of them on several hosts.</p>
+<ul>
+<li>An example of this architecture is the <em>cluster</em>.</li>
+</ul>
+<div class="def">
+<p>A <strong>cache</strong> is a store of recently used data objects that is closer to
+one client or a particular set of clients than the objects themselves.</p>
+</div>
+<p>If a client needs an object, the caching service can check a local cache
+first to save retransmitting potentially large payloads.</p>
+<p>Some applications employ <em>mobile code</em>, which relies on a client to
+download additional code to be run locally. The most common example of
+this is the web, for example old-school Java applets (this book’s
+favorite example).</p>
+<p>Extending that example are <em>mobile agents</em>, running programs that travel
+from one computer to another in a network carrying out a task on
+someone’s behalf and returning with the results.</p>
+<ul>
+<li>applicability may be limited</li>
+</ul>
+<h2 id="architectural-patterns"><a class="header" href="#architectural-patterns">Architectural Patterns</a></h2>
 
                     </main>
 
