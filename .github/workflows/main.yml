@@ -35,7 +35,7 @@ jobs:
           
       - name: Install mdbook-classy
         # if: steps.cache.outputs.cache-hit != 'true'
-        run: cargo install mdbook-classy --git https://github.com/ReeceMcMillin/mdbook-classy.git
+        run: cargo install mdbook-classy --git https://github.com/ReeceMcMillin/mdbook-classy.git --force
 
       - name: Build mdBook
         run: mdbook build
