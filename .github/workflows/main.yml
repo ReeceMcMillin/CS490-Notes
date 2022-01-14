@@ -18,7 +18,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ~/.cargo/bin/mdbook-classy
-          key: ${{ runner.os }}
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
 
       - name: Setup mdBook
         uses: peaceiris/actions-mdbook@v1
@@ -34,7 +34,7 @@ jobs:
           cp mdbook-linkcheck ~/.cargo/bin/
           
       - name: Install mdbook-classy
-        # if: steps.cache.outputs.cache-hit != 'true'
+        if: steps.cache.outputs.cache-hit != 'true'
         run: cargo install mdbook-classy --git https://github.com/ReeceMcMillin/mdbook-classy.git --force
 
       - name: Build mdBook
