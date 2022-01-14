@@ -8,23 +8,23 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      CARGO_TARGET_DIR: ~/.cargo/bin/
+      CARGO_TARGET_DIR: ../../.cargo/bin/
 
     steps:
       - uses: actions/checkout@v2
 
-      - name: Install Rust nightly (minimal)
+      - name: Update Rust
         uses: actions-rs/toolchain@v1
         with:
           profile: minimal
-          toolchain: nightly
+          toolchain: stable
       
       - name: Cache mdbook-classy
         id: cache
         uses: actions/cache@v2
         with:
           path: ~/.cargo/bin/mdbook-classy
-          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+          key: ${{ runner.os }}-0.1.0
 
       - name: Setup mdBook
         uses: peaceiris/actions-mdbook@v1
