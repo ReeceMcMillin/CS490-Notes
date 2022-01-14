@@ -13,8 +13,8 @@ extremely diverse set of devices and networks
     - differences must be addressed via [marshalling](../chapter-4/marshalling.md)
        if applications using these languages are to communicate with each other
 
-{:.def}
-Middleware: a software layer that provides a programming abstraction as
+{:.def term="Middleware"}
+A software layer that provides a programming abstraction as
 well as masking the heterogeneity of the underlying networks, hardware,
 operating systems, and programming languages.
 

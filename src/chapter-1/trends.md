@@ -12,8 +12,8 @@ systems, such as:
     - outright disconnection
     - maintain operation in the face of mobility
 
-{:.def}
-Ubiquitous computing: the harnessing of many small, cheap computational
+{:.def term="Ubiquitous Computing"}
+The harnessing of many small, cheap computational
 devices that are present in users' physical environments, including
 home, office, and natural settings.
 
@@ -22,8 +22,6 @@ devices will be so pervasive that they're scarcely noticed. Their
 computational behavior will be transparently and intimately tied with
 their physical function. Although there is some overlap, ubiquitous and
 mobile computing are separate.
-
-{:.div}
 
 A primary goal of ubiquitous computing is *spontaneous interoperation*,
 whereby associations between devices are routinely created and
@@ -50,10 +48,10 @@ Many companies have an interest in promoting distributed resources as a
 commodity or utility in the style of water or electricity. This opens
 the door for a *rent-based* service model rather than an ownership-based
 model.
-    - SaaS, IaaS, .aaS
+    - SaaS, IaaS, *aaS
 
-{:.def}
-Cloud: a set of internet-based application, storage, and computing
+{:.def term="Cloud"}
+A set of internet-based application, storage, and computing
 services sufficient to support most users' needs, thus enabling them to
 largely or totally dispense with local data storage and application
 software.

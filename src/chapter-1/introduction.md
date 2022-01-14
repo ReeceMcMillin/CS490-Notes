@@ -1,8 +1,7 @@
 # Introduction
 
-{:.def}
-Distributed System: a system in which hardware or software components
-located at networked computers communicate and coordinate their actions *only* by passing messages.
+{:.def term="Distributed System"}
+A system in which hardware or software components located at networked computers communicate and coordinate their actions *only* by passing messages.
 
 This definition has several consequences:
     - concurrency

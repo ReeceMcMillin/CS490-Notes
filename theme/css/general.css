@@ -195,48 +195,28 @@ blockquote {
     padding-bottom: 0px;
 }
 
-.note {
+.note, .def {
     margin-top: 20px;
     padding: 5px 20px 5px 20px;
-    border-radius: 8px;
-    box-shadow: var(--fg) 0px 0px 0px 2px, var(--fg) 2px 2px 0px 2px
+    box-shadow: var(--fg) 0px 0px 0px 2px, var(--fg) 8px 8px 0px 0px
 }
 
-.note p {
+.note p, .def p {
     border-top: 1px solid var(--fg);
     margin: 0px;
     margin-top: 10px;
+    margin-bottom: 10px;
     padding-top: 10px;
 }
 
 .def::before {
-    content: "Definition";
+    content: "Definition: " attr(term);
     font-size: 3rem;
     padding-bottom: 5px;
 }
 
-.def {
-    margin-top: 20px;
-    padding: 5px 20px 5px 20px;
-    border-radius: 8px;
-    box-shadow: var(--fg) 0px 0px 0px 2px, var(--fg) 2px 2px 0px 2px
-}
-
-.def p {
-    border-top: 1px solid var(--fg);
-    margin: 0px;
-    margin-top: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
 ul {
     margin: 5px;
-}
-
-p {
-    margin-top: 25px;
-    margin-bottom: 0px;
 }
 
 div .div::before {
@@ -247,3 +227,7 @@ div .div::before {
     width: 100%;
 }
 
+p {
+    margin: 0px;
+    padding-top: 20px;
+}

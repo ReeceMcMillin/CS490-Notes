@@ -6,8 +6,8 @@ users are tied together.
     - cooperative workers in a particular organization may share *every*
     document together
 
-{:.def}
-Service: a distinct part of a computer system that manages a collection
+{:.def term="Service"}
+A distinct part of a computer system that manages a collection
 of related resources and presents their functionality to users and
 applications.
 
@@ -15,8 +15,8 @@ Resources in a distributed system are managed by a program that offers a
 communication interface enabling the resource to be accessed and updated
 reliably and constantly.
 
-{:.def}
-Server: a running program (a *process*) on a networked computer that
+{:.def term="Server"}
+A running program (a *process*) on a networked computer that
 accepts requests from programs running on other computers to perform a
 service and responds appropriately.
 
