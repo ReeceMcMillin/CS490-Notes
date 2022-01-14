@@ -9,5 +9,5 @@ Related reading:
 {:.def term="Distributed System"}
 a system that's distributed
 
-<!-- {:.def term=hello}
-world -->
+{:.def term="hello"}
+world
