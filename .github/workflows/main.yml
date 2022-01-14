@@ -7,6 +7,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      CARGO_TARGET_DIR: "/home/.cargo/bin"
+
     steps:
       - uses: actions/checkout@v2
       
@@ -31,7 +34,7 @@ jobs:
           cp mdbook-linkcheck ~/.cargo/bin/
           
       - name: Install mdbook-classy
-        if: steps.cache.outputs.cache-hit != 'true'
+        # if: steps.cache.outputs.cache-hit != 'true'
         run: cargo install mdbook-classy --git https://github.com/ReeceMcMillin/mdbook-classy.git
 
       - name: Build mdBook
