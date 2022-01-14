@@ -144,7 +144,7 @@
 <p>These are my personal Spring 2022 book/lecture notes for CS490 - Distributed Systems. </p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="characterization-of-distributed-systems"><a class="header" href="#characterization-of-distributed-systems">Characterization of Distributed Systems</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
-<div class="def term="Distributed System"">
+<div class="def"  term="Distributed System">
 <p>A system in which hardware or software components located at networked computers communicate and coordinate their actions <em>only</em> by passing messages.</p>
 </div>
 <p>This definition has several consequences:</p>
@@ -194,7 +194,7 @@ systems, such as:</p>
 <li>outright disconnection</li>
 <li>maintain operation in the face of mobility</li>
 </ul>
-<div class="def term="Ubiquitous Computing"">
+<div class="def"  term="Ubiquitous Computing">
 <p>The harnessing of many small, cheap computational
 devices that are present in users’ physical environments, including
 home, office, and natural settings.</p>
@@ -231,7 +231,7 @@ model.</p>
 <ul>
 <li>SaaS, IaaS, *aaS</li>
 </ul>
-<div class="def term="Cloud"">
+<div class="def"  term="Cloud">
 <p>A set of internet-based application, storage, and computing
 services sufficient to support most users’ needs, thus enabling them to
 largely or totally dispense with local data storage and application
@@ -248,7 +248,7 @@ users are tied together.</p>
 <li>cooperative workers in a particular organization may share <em>every</em>
 document together</li>
 </ul>
-<div class="def term="Service"">
+<div class="def"  term="Service">
 <p>A distinct part of a computer system that manages a collection
 of related resources and presents their functionality to users and
 applications.</p>
@@ -256,7 +256,7 @@ applications.</p>
 <p>Resources in a distributed system are managed by a program that offers a
 communication interface enabling the resource to be accessed and updated
 reliably and constantly.</p>
-<div class="def term="Server"">
+<div class="def"  term="Server">
 <p>A running program (a <em>process</em>) on a networked computer that
 accepts requests from programs running on other computers to perform a
 service and responds appropriately.</p>
@@ -278,7 +278,7 @@ various data structures</li>
 <li>differences must be addressed via <a href="chapter-1/../chapter-4/marshalling.html">marshalling</a>
 if applications using these languages are to communicate with each other</li>
 </ul>
-<div class="def term="Middleware"">
+<div class="def"  term="Middleware">
 <p>A software layer that provides a programming abstraction as
 well as masking the heterogeneity of the underlying networks, hardware,
 operating systems, and programming languages.</p>
@@ -412,7 +412,7 @@ that can be exhibited by processes and channels.</li>
 communication channels.</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="physical-models"><a class="header" href="#physical-models">Physical Models</a></h1>
-<div class="def">
+<div class="def"  >
 <p>A <strong>physical model</strong> is a representation of the underlying hardware
 elements of a distributed system that abstracts away from specific
 details of the computer and networking technologies involved.</p>
@@ -566,7 +566,7 @@ but for distributed objects.
 </ul>
 </li>
 </ul>
-<div class="note">
+<div class="note"  >
 <p>All of these techniques have one thing in common:
 communication represents a two-way relationship between a sender and a receiver, with
 senders explicitly direction methods/invocations to the remote
@@ -639,7 +639,7 @@ objects between themselves or replicate copies of them on several hosts.</p>
 <ul>
 <li>An example of this architecture is the <em>cluster</em>.</li>
 </ul>
-<div class="def">
+<div class="def"  >
 <p>A <strong>cache</strong> is a store of recently used data objects that is closer to
 one client or a particular set of clients than the objects themselves.</p>
 </div>
@@ -735,110 +735,95 @@ someone’s behalf and returning with the results.</p>
 Related reading:
     - [Chapter 1 - Characterization of Distributed Systems](../chapter-1/index.md)
     - [Chapter 2 - System Models](../chapter-2/index.md) -->
-<div class="def term="Distributed System"">
+<div class="def"  term="Distributed System">
 <p>a system that’s distributed</p>
 </div>
-<div class="def term="hello"">
+<div class="def"  term="hello">
 <p>world</p>
-</div>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="ipc-and-remote-invocation"><a class="header" href="#ipc-and-remote-invocation">IPC and Remote Invocation</a></h1>
-<div class="note">
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="ipc-and-remote-invocation"><a class="header" href="#ipc-and-remote-invocation">IPC and Remote Invocation</a></h1>
+<div class="note"  >
 <p>Related Reading:</p>
 <ul>
 <li><a href="lectures/../chapter-4/index.html">Chapter 4 - Interprocess Communication</a></li>
 <li><a href="lectures/../chapter-5/index.html">Chapter 5 - Remote Invocation</a></li>
 </ul>
-</div>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="indirect-communication-1"><a class="header" href="#indirect-communication-1">Indirect Communication</a></h1>
-<div class="note">
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="indirect-communication-1"><a class="header" href="#indirect-communication-1">Indirect Communication</a></h1>
+<div class="note"  >
 <p>Related Reading:</p>
 <ul>
 <li><a href="lectures/../chapter-6/index.html">Chapter 6 - Indirect Communication</a></li>
 </ul>
-</div>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="notion-of-time-in-distributed-computing"><a class="header" href="#notion-of-time-in-distributed-computing">Notion of Time in Distributed Computing</a></h1>
-<div class="note">
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="notion-of-time-in-distributed-computing"><a class="header" href="#notion-of-time-in-distributed-computing">Notion of Time in Distributed Computing</a></h1>
+<div class="note"  >
 <p>Related Reading:</p>
 <ul>
 <li><a href="lectures/../chapter-14/index.html">Chapter 14 - Time and Global States</a></li>
 </ul>
-</div>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="logical-clocks-global-states"><a class="header" href="#logical-clocks-global-states">Logical Clocks, Global States</a></h1>
-<div class="note">
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="logical-clocks-global-states"><a class="header" href="#logical-clocks-global-states">Logical Clocks, Global States</a></h1>
+<div class="note"  >
 <p>Related Reading:</p>
 <ul>
 <li><a href="lectures/../chapter-14/logical-time.html">Chapter 14, Sections 14.4-14.5 - Logical Clocks, Global States</a></li>
 </ul>
-</div>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="distributed-algorithms---mutual-exclusion"><a class="header" href="#distributed-algorithms---mutual-exclusion">Distributed Algorithms - Mutual Exclusion</a></h1>
-<div class="note">
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="distributed-algorithms---mutual-exclusion"><a class="header" href="#distributed-algorithms---mutual-exclusion">Distributed Algorithms - Mutual Exclusion</a></h1>
+<div class="note"  >
 <p>Related Reading:</p>
 <ul>
 <li><a href="lectures/../chapter-15/index.html">15.1, 15.2 - Mutual Exclusion</a></li>
 </ul>
-</div>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="distributed-algorithms---leader-election"><a class="header" href="#distributed-algorithms---leader-election">Distributed Algorithms - Leader Election</a></h1>
-<div class="note">
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="distributed-algorithms---leader-election"><a class="header" href="#distributed-algorithms---leader-election">Distributed Algorithms - Leader Election</a></h1>
+<div class="note"  >
 <p>Related Reading:</p>
 <ul>
 <li><a href="lectures/../chapter-15/elections.html">15.3 - Elections</a></li>
 </ul>
-</div>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="distributed-coordination---group-communication"><a class="header" href="#distributed-coordination---group-communication">Distributed Coordination - Group Communication</a></h1>
-<div class="note">
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="distributed-coordination---group-communication"><a class="header" href="#distributed-coordination---group-communication">Distributed Coordination - Group Communication</a></h1>
+<div class="note"  >
 <p>Related Reading:</p>
 <ul>
 <li><a href="lectures/../chapter-15/coordination.html">15.4 - Coordination and Agreement in Group Communication</a></li>
 </ul>
-</div>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="distributed-coordination---consensus"><a class="header" href="#distributed-coordination---consensus">Distributed Coordination - Consensus</a></h1>
-<div class="note">
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="distributed-coordination---consensus"><a class="header" href="#distributed-coordination---consensus">Distributed Coordination - Consensus</a></h1>
+<div class="note"  >
 <p>Related Reading:</p>
 <ul>
 <li><a href="lectures/../chapter-15/consensus.html">15.5 - Consensus and Related Problems</a></li>
 </ul>
-</div>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="distributed-file-systems-1"><a class="header" href="#distributed-file-systems-1">Distributed File Systems</a></h1>
-<div class="note">
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="distributed-file-systems-1"><a class="header" href="#distributed-file-systems-1">Distributed File Systems</a></h1>
+<div class="note"  >
 <p>Related Reading:</p>
 <ul>
 <li><a href="lectures/../chapter-12/index.html">Chapter 12 - Distributed File Systems</a></li>
 </ul>
-</div>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="spring-break"><a class="header" href="#spring-break">Spring Break</a></h1>
-<div class="note">
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="spring-break"><a class="header" href="#spring-break">Spring Break</a></h1>
+<div class="note"  >
 <p>stop studying please ur burn’t out</p>
-</div>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="distributed-transactions-1"><a class="header" href="#distributed-transactions-1">Distributed Transactions</a></h1>
-<div class="note">
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="distributed-transactions-1"><a class="header" href="#distributed-transactions-1">Distributed Transactions</a></h1>
+<div class="note"  >
 <p>Related Reading:</p>
 <ul>
 <li><a href="lectures/../chapter-17/index.html">Chapter 17 - Distributed Transactions</a></li>
 </ul>
-</div>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="replication-1"><a class="header" href="#replication-1">Replication</a></h1>
-<div class="note">
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="replication-1"><a class="header" href="#replication-1">Replication</a></h1>
+<div class="note"  >
 <p>Related Reading:</p>
 <ul>
 <li><a href="lectures/../chapter-18/index.html">Chapter 18 - Replication</a></li>
 </ul>
-</div>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="p2p-systems-1"><a class="header" href="#p2p-systems-1">P2P Systems</a></h1>
-<div class="note">
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="p2p-systems-1"><a class="header" href="#p2p-systems-1">P2P Systems</a></h1>
+<div class="note"  >
 <p>Related Reading:</p>
 <ul>
 <li><a href="lectures/../chapter-10/index.html">Chapter 10 - Peer-to-Peer Systems</a></li>
 </ul>
-</div>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="distributed-system-case-study"><a class="header" href="#distributed-system-case-study">Distributed System Case-Study</a></h1>
-<div class="note">
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="distributed-system-case-study"><a class="header" href="#distributed-system-case-study">Distributed System Case-Study</a></h1>
+<div class="note"  >
 <p>Related Reading:</p>
 <ul>
 <li><a href="https://static.googleusercontent.com/media/research.google.com/en//archive/mapreduce-osdi04.pdf">Original MapReduce Paper</a></li>
 <li><a href="lectures/../chapter-21/index.html">Chapter 21 - Google Case Study</a></li>
 </ul>
-</div>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="final-exam"><a class="header" href="#final-exam">Final Exam</a></h1>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="final-exam"><a class="header" href="#final-exam">Final Exam</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="exercises"><a class="header" href="#exercises">Exercises</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-1"><a class="header" href="#chapter-1">Chapter 1</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-2"><a class="header" href="#chapter-2">Chapter 2</a></h1>
