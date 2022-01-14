@@ -8,7 +8,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      CARGO_TARGET_DIR: "/home/.cargo/bin"
+      CARGO_TARGET_DIR: ~/.cargo/bin/
 
     steps:
       - uses: actions/checkout@v2
