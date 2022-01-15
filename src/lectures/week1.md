@@ -11,3 +11,5 @@ a system that's distributed
 
 {:.def term="hello"}
 world
+
+<aside>hey</aside>

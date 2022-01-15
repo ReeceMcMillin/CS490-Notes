@@ -141,8 +141,8 @@ the set of objects on which the service is based and distribute those
 objects between themselves or replicate copies of them on several hosts.
 - An example of this architecture is the *cluster*.
 
-{:.def}
-A **cache** is a store of recently used data objects that is closer to
+{:.def term="Cache"}
+A store of recently used data objects that is closer to
 one client or a particular set of clients than the objects themselves.
 
 If a client needs an object, the caching service can check a local cache
@@ -153,9 +153,20 @@ download additional code to be run locally. The most common example of
 this is the web, for example old-school Java applets (this book's
 favorite example).
 
+{:.aside note="i'm skeptical"}
+is this really true? hard 2 say really idk i'm just adding text to test
+justifying at this point lol
+
 Extending that example are *mobile agents*, running programs that travel
 from one computer to another in a network carrying out a task on
 someone's behalf and returning with the results.
     - applicability may be limited
 
+
 ## Architectural Patterns
+
+{:.aside note="lil summary deal"}
+hi
+
+testing
+
