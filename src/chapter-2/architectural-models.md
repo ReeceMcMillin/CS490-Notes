@@ -52,7 +52,7 @@ abstractions have been proposed.
     - closely related to objects and components
         - approach based on encapsulation and access through interfaces
         - represent and discover services through web standards
-    - expanded on in [chapter 9](../chapter-9/index.md)
+    - expanded on in chapter 9
 
 ### Communication Paradigms
 
@@ -66,22 +66,20 @@ Three types:
     - expanded on in [chapter 4](../chapter-4/index.md)
 - *Remote invocation* covers a range of techniques based on a two-way
   exchange between entities in a distributed system
-    - results in the calling of a remote operation, procedure, or method
-    - expanded on in [chapter 5](../chapter-5/index.md)
+    - *Remote procedure calls* allow procedures in processes on remote
+      computers to be called as if they were processes in the local address
+      space.
+        - **access and location transparency**
+    - *Remote method invocation* strongly resembles remote procedure calls,
+      but for distributed objects.
+        - calling object can invoke a method in a remote object
+        - underlying details are hidden from the user
 - *Request-reply protocols* are a pattern imposed on an underlying
   message-passing service to support client-server computing.
     - primitive, typically only used in embedded systems
     - this is the approach used by HTTP
     - most DSs will use remote procedure calls or remote method
     invocation
-- *Remote procedure calls* allow procedures in processes on remote
-  computers to be called as if they were processes in the local address
-  space.
-    - **access and location transparency**
-- *Remote method invocation* strongly resembles remote procedure calls,
-  but for distributed objects.
-    - calling object can invoke a method in a remote object
-    - underlying details are hidden from the user
 
 {:.note}
 All of these techniques have one thing in common:
@@ -153,10 +151,6 @@ download additional code to be run locally. The most common example of
 this is the web, for example old-school Java applets (this book's
 favorite example).
 
-{:.aside note="i'm skeptical"}
-is this really true? hard 2 say really idk i'm just adding text to test
-justifying at this point lol
-
 Extending that example are *mobile agents*, running programs that travel
 from one computer to another in a network carrying out a task on
 someone's behalf and returning with the results.
@@ -165,8 +159,55 @@ someone's behalf and returning with the results.
 
 ## Architectural Patterns
 
-{:.aside note="lil summary deal"}
-hi
+Architectural *patterns* build on the elements discussed above to
+provide composite structures.
 
-testing
+### Layering
 
+Layers in a complex system offer software abstractions - higher layers
+don't need to be aware of the implementation details of lower layers.
+This equates to a *vertical* organization of services into service
+layers.
+
+{:.def term="Platform"}
+Consists of the lowest-level hardware and software layers.
+
+{:.def term="Middleware"}
+A layer of software whose purpose is to mask heterogeneity and to
+provide a convenient programming model to application programmers.
+
+- Primarily concerned with raising the level of communication through
+the support of abstractions such as RMI, event notifications,
+organization and replication of shared data objects, and transmission of data.
+
+### Tiered Architecture
+
+Where layering deals with vertical organization of services, tiering
+organizes functionality of a given layer and places it into appropriate
+servers.
+
+Consider the functional decomposition of an application:
+- presentation logic
+    - concerned with handling user interaction
+- application logic/business logic
+- data logic
+    - concerned with persistent storage of the application
+
+In a **two-tier** solution, these aspects must be partitioned into
+client and server processes. This might be done by splitting the
+application logic, leaving some in the client and some in the server.
+
+In a **three-tier** solution, each aspect has a separate logical or
+physical server. This allows each tier to have a well-defined role.
+
+{:.def term="Thin Client"}
+A software layer that supports a UI local to the user while executing
+applications or accessing services on a remote computer.
+
+### Other Patterns
+
+- proxy: support **location transparency** in RPC or RMI
+- brokerage: support interoperability in complex infrastructures
+- reflection: offer both
+    - introspection: dynamic discovery of properties of the system
+    - intercession: ability to dynamically modify structure/behavior
