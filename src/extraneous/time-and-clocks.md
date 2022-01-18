@@ -14,11 +14,8 @@ Two different types of clocks in computer systems
     - only meaningful on a specific machine
     - **not comparable between machines**
 
-| physical clocks    | points in time | intervals/durations |
-|--------------------|----------------|---------------------|
-| time-of-day clocks | :(             | :)                  |
-| monotonic clocks   | :(             | :(                  |
-
+<!-- TODO: Rewrite as markdown table! Requires fixing mdbook-classy to
+not break on valid table inputs for some reason but no time rn lol -->
 <table>
     <tr>
         <th>physical clocks</th>
@@ -42,12 +39,6 @@ Since these both suck, what can we do?
 {:.def term="Logical Clock"}
 A clock that only measures the **order of events**.
 
-\\(A \rightarrow B\\)
-- "\\(A\\) happened before \\(B\\)"
-- notion of *causality*
-    - \\(A\\) *could have* (but may not have) caused \\(B\\)
-    - \\(B\\) *could **not** have* caused \\(A\\)
-
 ## Lamport Diagrams
 Also known as "spacetime diagrams"
 
@@ -65,6 +56,12 @@ A network where there exists **NO** \\(n\\) such that no message takes
 longer than \\(n\\) units of time to be delivered.
 
 ## Happens-Before Relationship (\\(\rightarrow\\))
+\\(A \rightarrow B\\)
+- "\\(A\\) happened before \\(B\\)"
+- notion of *causality*
+    - \\(A\\) *could have* (but may not have) caused \\(B\\)
+    - \\(B\\) *could **not** have* caused \\(A\\)
+
 Given events A and B, we say A \\(\rightarrow\\) B if:
 - A and B occur on the same process with A before B
 - A is a `send` event and B is the corresponding `receive` event
