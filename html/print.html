@@ -917,10 +917,8 @@ applications or accessing services on a remote computer.</p>
 </ul>
 </li>
 </ul>
-<p>| physical clocks    | points in time | intervals/durations |
-|––––––––––|––––––––|———————|
-| time-of-day clocks | :(             | :)                  |
-| monotonic clocks   | :(             | :(                  |</p>
+<!-- TODO: Rewrite as markdown table! Requires fixing mdbook-classy to
+not break on valid table inputs for some reason but no time rn lol -->
 <table>
     <tr>
         <th>physical clocks</th>
@@ -942,16 +940,6 @@ applications or accessing services on a remote computer.</p>
 <div class="def"  term="Logical Clock">
 <p>A clock that only measures the <strong>order of events</strong>.</p>
 </div>
-<p>\(A \rightarrow B\)</p>
-<ul>
-<li>“\(A\) happened before \(B\)”</li>
-<li>notion of <em>causality</em>
-<ul>
-<li>\(A\) <em>could have</em> (but may not have) caused \(B\)</li>
-<li>\(B\) <em>could <strong>not</strong> have</em> caused \(A\)</li>
-</ul>
-</li>
-</ul>
 <h2 id="lamport-diagrams"><a class="header" href="#lamport-diagrams">Lamport Diagrams</a></h2>
 <p>Also known as “spacetime diagrams”</p>
 <p>Example:
@@ -968,6 +956,16 @@ longer than \(n\) units of time to be delivered.
 longer than \(n\) units of time to be delivered.</p>
 </div>
 <h2 id="happens-before-relationship-rightarrow"><a class="header" href="#happens-before-relationship-rightarrow">Happens-Before Relationship (\(\rightarrow\))</a></h2>
+<p>\(A \rightarrow B\)</p>
+<ul>
+<li>“\(A\) happened before \(B\)”</li>
+<li>notion of <em>causality</em>
+<ul>
+<li>\(A\) <em>could have</em> (but may not have) caused \(B\)</li>
+<li>\(B\) <em>could <strong>not</strong> have</em> caused \(A\)</li>
+</ul>
+</li>
+</ul>
 <p>Given events A and B, we say A \(\rightarrow\) B if:</p>
 <ul>
 <li>A and B occur on the same process with A before B</li>
