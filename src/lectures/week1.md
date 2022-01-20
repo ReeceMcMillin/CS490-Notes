@@ -79,3 +79,124 @@ Three main aspects:
     - p2p systems
     - cloud computing
 
+Attributes of distributed systems:
+- concurrency
+- no global clocks
+- independent failures
+    - distributed systems can be characterized by the *independence* of
+the participating nodes
+
+{:.def term="Cloud Computing"}
+The term applied to distributed computing infrastructure packaged as a
+utility - computing resources are *rented* rather than owned by
+end-users.
+
+The cloud computing model can be applied to physical resources as well
+as logical resources.
+
+Challenges in Distributed Systems
+- heterogeneity
+- openness
+    - can be extended and reimplemented in various ways
+- security
+- scalability
+- failure handling
+- transparency
+    - system perceived as a whole rather than a collection of
+    independent components
+
+## System Models
+- [ Physical Models ](../chapter-2/physical-models.md)
+    - hardware composition of a system of computers and their
+  interconnection networks
+- [ Architectural Models ](../chapter-2/architectural-models.md)
+    - in terms of computational and communicational elements
+- [ Fundamental Models ](../chapter-2/fundamental-models.md)
+    - abstract model to examine aspects of a system
+
+### Physical Models
+- baseline physical model
+    - a set of computers connected by a network
+### Architectural Models
+- "computers" are replaced with "entities"
+    - abstract transformation
+- communication entities
+    - processes: executing programs
+    - processes communicate
+        - ([inter-process communication](../chapter-4/index.md))
+    - from programming perspective, more abstractions are possible
+        - objects (OOP style)
+        - components
+            - objects and related dependencies
+        - web services
+            - combines objects and components as a "service"
+            - exposes APIs for other process/applications to call
+- communication paradigms
+    - direct communication
+        - Interprocess Communication (IPC)
+            - low-level
+        - Remote Invocation (RI)
+            - two-way exchange of messages between entities
+            - several methods
+                - request-reply protocols
+                - remote procedure call (RPC)
+                    - one process calls procedure/function in another
+                    process
+                - remote method invocation (RMI)
+                    - RPC in the context of distributed objects
+            - sender sends to receiver
+            - both know each other and exist at the same time
+            - "coupled" in space and time
+    - indirect communication
+        - uncoupled
+            - senders don't know who they're sending to
+                - space uncoupled
+            - senders and receivers do **not** exist at the same time
+                - time uncoupled
+        - key techniques
+            - group communication
+            - pubsub
+            - message queues
+            - tuple spaces
+            - distributed shared memory
+- roles and responsibilities
+    - most popular model: client-server architecture
+        - roles:
+            - clients "request"
+            - servers "reply" or "respond"
+    - peer-to-peer architecture
+        - no single node acts as server
+        - all nodes act as clients and servers
+            - all are "peers"
+        - examples: bittorrent, blockchain
+- architectural patterns
+    - layering (popular)
+        - vertical "stack" of services where lower-level services
+        provide abstract interfaces for higher-level services to call
+### Fundamental Models
+- three questions:
+    - what are the main **entities** in the system?
+    - how do they **interact**?
+    - what are the characteristic that affect their **individual** and
+    **collective** behavior?
+- sender sends "messages" to a receiver through a "channel"
+    - two basic/primitive operations:
+        - send
+        - receive
+- properties of the communication channel:
+    - latency
+    - bandwidth
+    - jitter
+
+{:.def term="Distributed Algorithm"}
+A sequence of steps, including sending and receiving of messages and
+update internal state within each process.
+
+- two variants based on **bound on timing of events**
+- synchronous systems
+    - take bounded (lower and/or upper) time for
+        - executing each step of a process
+        - receiving a message after the message has been transmitted
+        - bounded clock drift
+- asynchronous systems
+    - have *no known bound* on how much time it can take on an operation

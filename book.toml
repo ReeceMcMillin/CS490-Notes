@@ -18,4 +18,3 @@ enable = true
 level = 0
 
 [output.linkcheck]
-
