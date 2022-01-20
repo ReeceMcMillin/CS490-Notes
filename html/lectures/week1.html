@@ -247,6 +247,253 @@ communication medium.</p>
 </ul>
 </li>
 </ul>
+<p>Attributes of distributed systems:</p>
+<ul>
+<li>concurrency</li>
+<li>no global clocks</li>
+<li>independent failures
+<ul>
+<li>distributed systems can be characterized by the <em>independence</em> of
+the participating nodes</li>
+</ul>
+</li>
+</ul>
+<div class="def"  term="Cloud Computing">
+<p>The term applied to distributed computing infrastructure packaged as a
+utility - computing resources are <em>rented</em> rather than owned by
+end-users.</p>
+</div>
+<p>The cloud computing model can be applied to physical resources as well
+as logical resources.</p>
+<p>Challenges in Distributed Systems</p>
+<ul>
+<li>heterogeneity</li>
+<li>openness
+<ul>
+<li>can be extended and reimplemented in various ways</li>
+</ul>
+</li>
+<li>security</li>
+<li>scalability</li>
+<li>failure handling</li>
+<li>transparency
+<ul>
+<li>system perceived as a whole rather than a collection of
+independent components</li>
+</ul>
+</li>
+</ul>
+<h2 id="system-models"><a class="header" href="#system-models">System Models</a></h2>
+<ul>
+<li><a href="../chapter-2/physical-models.html"> Physical Models </a>
+<ul>
+<li>hardware composition of a system of computers and their
+interconnection networks</li>
+</ul>
+</li>
+<li><a href="../chapter-2/architectural-models.html"> Architectural Models </a>
+<ul>
+<li>in terms of computational and communicational elements</li>
+</ul>
+</li>
+<li><a href="../chapter-2/fundamental-models.html"> Fundamental Models </a>
+<ul>
+<li>abstract model to examine aspects of a system</li>
+</ul>
+</li>
+</ul>
+<h3 id="physical-models"><a class="header" href="#physical-models">Physical Models</a></h3>
+<ul>
+<li>baseline physical model
+<ul>
+<li>a set of computers connected by a network</li>
+</ul>
+</li>
+</ul>
+<h3 id="architectural-models"><a class="header" href="#architectural-models">Architectural Models</a></h3>
+<ul>
+<li>“computers” are replaced with “entities”
+<ul>
+<li>abstract transformation</li>
+</ul>
+</li>
+<li>communication entities
+<ul>
+<li>processes: executing programs</li>
+<li>processes communicate
+<ul>
+<li>(<a href="../chapter-4/index.html">inter-process communication</a>)</li>
+</ul>
+</li>
+<li>from programming perspective, more abstractions are possible
+<ul>
+<li>objects (OOP style)</li>
+<li>components
+<ul>
+<li>objects and related dependencies</li>
+</ul>
+</li>
+<li>web services
+<ul>
+<li>combines objects and components as a “service”</li>
+<li>exposes APIs for other process/applications to call</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>communication paradigms
+<ul>
+<li>direct communication
+<ul>
+<li>Interprocess Communication (IPC)
+<ul>
+<li>low-level</li>
+</ul>
+</li>
+<li>Remote Invocation (RI)
+<ul>
+<li>two-way exchange of messages between entities</li>
+<li>several methods
+<ul>
+<li>request-reply protocols</li>
+<li>remote procedure call (RPC)
+<ul>
+<li>one process calls procedure/function in another
+process</li>
+</ul>
+</li>
+<li>remote method invocation (RMI)
+<ul>
+<li>RPC in the context of distributed objects</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>sender sends to receiver</li>
+<li>both know each other and exist at the same time</li>
+<li>“coupled” in space and time</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>indirect communication
+<ul>
+<li>uncoupled
+<ul>
+<li>senders don’t know who they’re sending to
+<ul>
+<li>space uncoupled</li>
+</ul>
+</li>
+<li>senders and receivers do <strong>not</strong> exist at the same time
+<ul>
+<li>time uncoupled</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>key techniques
+<ul>
+<li>group communication</li>
+<li>pubsub</li>
+<li>message queues</li>
+<li>tuple spaces</li>
+<li>distributed shared memory</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>roles and responsibilities
+<ul>
+<li>most popular model: client-server architecture
+<ul>
+<li>roles:
+<ul>
+<li>clients “request”</li>
+<li>servers “reply” or “respond”</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>peer-to-peer architecture
+<ul>
+<li>no single node acts as server</li>
+<li>all nodes act as clients and servers
+<ul>
+<li>all are “peers”</li>
+</ul>
+</li>
+<li>examples: bittorrent, blockchain</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>architectural patterns
+<ul>
+<li>layering (popular)
+<ul>
+<li>vertical “stack” of services where lower-level services
+provide abstract interfaces for higher-level services to call</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="fundamental-models"><a class="header" href="#fundamental-models">Fundamental Models</a></h3>
+<ul>
+<li>three questions:
+<ul>
+<li>what are the main <strong>entities</strong> in the system?</li>
+<li>how do they <strong>interact</strong>?</li>
+<li>what are the characteristic that affect their <strong>individual</strong> and
+<strong>collective</strong> behavior?</li>
+</ul>
+</li>
+<li>sender sends “messages” to a receiver through a “channel”
+<ul>
+<li>two basic/primitive operations:
+<ul>
+<li>send</li>
+<li>receive</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>properties of the communication channel:
+<ul>
+<li>latency</li>
+<li>bandwidth</li>
+<li>jitter</li>
+</ul>
+</li>
+</ul>
+<div class="def"  term="Distributed Algorithm">
+<p>A sequence of steps, including sending and receiving of messages and
+update internal state within each process.</p>
+</div>
+<ul>
+<li>two variants based on <strong>bound on timing of events</strong></li>
+<li>synchronous systems
+<ul>
+<li>take bounded (lower and/or upper) time for
+<ul>
+<li>executing each step of a process</li>
+<li>receiving a message after the message has been transmitted</li>
+<li>bounded clock drift</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>asynchronous systems
+<ul>
+<li>have <em>no known bound</em> on how much time it can take on an operation</li>
+</ul>
+</li>
+</ul>
 
                     </main>
 
