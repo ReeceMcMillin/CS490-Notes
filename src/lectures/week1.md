@@ -200,3 +200,39 @@ update internal state within each process.
         - bounded clock drift
 - asynchronous systems
     - have *no known bound* on how much time it can take on an operation
+
+#### Ordering of Events
+
+The order in which messages are received cannot take the order those
+messages are sent into account
+- asynchronous nature of distributed systems
+
+#### Failure Model
+
+| class of failure | affects | description |
+|*---*|*---*|*---*|
+|fail-stop | process|
+| crash|process |
+|omission |channel |
+| send-omission|process |
+|receive-omission |process |
+| arbitrary (byzantine)|process or channel |
+
+timing failures:
+- clock
+    - affects process
+    - process's local clock exceeds bounds on rate of drift from real
+    time
+- performance
+    - process
+        - process exceeds bounds on interval between two steps
+    - channel
+        - a message's transmission takes longer than the stated bound
+
+# Major Questions in this Course
+
+What are the entities and how do they communicate?
+What sorts of failures are we assuming?
+- fail-stop
+- omission
+- arbitrary (byzantine)
