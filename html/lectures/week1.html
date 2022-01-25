@@ -494,6 +494,53 @@ update internal state within each process.</p>
 </ul>
 </li>
 </ul>
+<h4 id="ordering-of-events"><a class="header" href="#ordering-of-events">Ordering of Events</a></h4>
+<p>The order in which messages are received cannot take the order those
+messages are sent into account</p>
+<ul>
+<li>asynchronous nature of distributed systems</li>
+</ul>
+<h4 id="failure-model"><a class="header" href="#failure-model">Failure Model</a></h4>
+<p>| class of failure | affects | description |
+|<em>—</em>|<em>—</em>|<em>—</em>|
+|fail-stop | process|
+| crash|process |
+|omission |channel |
+| send-omission|process |
+|receive-omission |process |
+| arbitrary (byzantine)|process or channel |</p>
+<p>timing failures:</p>
+<ul>
+<li>clock
+<ul>
+<li>affects process</li>
+<li>process’s local clock exceeds bounds on rate of drift from real
+time</li>
+</ul>
+</li>
+<li>performance
+<ul>
+<li>process
+<ul>
+<li>process exceeds bounds on interval between two steps</li>
+</ul>
+</li>
+<li>channel
+<ul>
+<li>a message’s transmission takes longer than the stated bound</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="major-questions-in-this-course"><a class="header" href="#major-questions-in-this-course">Major Questions in this Course</a></h1>
+<p>What are the entities and how do they communicate?
+What sorts of failures are we assuming?</p>
+<ul>
+<li>fail-stop</li>
+<li>omission</li>
+<li>arbitrary (byzantine)</li>
+</ul>
 
                     </main>
 

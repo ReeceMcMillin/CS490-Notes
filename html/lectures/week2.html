@@ -147,6 +147,76 @@
 <li><a href="../chapter-5/index.html">Chapter 5 - Remote Invocation</a></li>
 </ul>
 </div>
+<h2 id="interprocess-communication-ipc"><a class="header" href="#interprocess-communication-ipc">Interprocess Communication (IPC)</a></h2>
+<p>Underlying IPC primitives:</p>
+<ul>
+<li>sockets</li>
+<li>message passing</li>
+<li>multicast support</li>
+<li>overlay network</li>
+</ul>
+<h3 id="characteristics"><a class="header" href="#characteristics">Characteristics</a></h3>
+<ul>
+<li>two primitive messaging operations
+<ul>
+<li>send: one process sends</li>
+<li>receive: another process receives</li>
+</ul>
+</li>
+<li>synchrony:
+<ul>
+<li>synchronous (blocking)
+<ul>
+<li>sender waits until message is sent</li>
+<li>receiver waits for messages</li>
+</ul>
+</li>
+<li>asynchronous (non-blocking)
+<ul>
+<li>sender sends message to the queue and proceeds immediately</li>
+<li>receiver is notified whenever there’s a new message</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>message destination
+<ul>
+<li>naming of nodes</li>
+<li>typically a tuple: (ip address, port)</li>
+</ul>
+</li>
+<li>reliability
+<ul>
+<li>is delivery guaranteed?</li>
+</ul>
+</li>
+<li>ordering
+<ul>
+<li>various orders are possible!</li>
+<li>fifo is common (sender order)</li>
+</ul>
+</li>
+</ul>
+<h3 id="sockets-for-ipc"><a class="header" href="#sockets-for-ipc">Sockets for IPC</a></h3>
+<ul>
+<li>most widely used IPC mechanism
+<ul>
+<li>usually used in client-server architecture</li>
+<li>server process creates a socket and “binds”</li>
+<li>client process connects to the server socket in the specified port</li>
+<li>once connected, they send/receive messages</li>
+</ul>
+</li>
+</ul>
+<p>UDP - Echo Server (Java)</p>
+<h3 id="serializationmarshalling"><a class="header" href="#serializationmarshalling">Serialization/Marshalling</a></h3>
+<div class="def"  term="Serialization">
+<p>The process of converting structured data into a byte sequence</p>
+</div>
+<div class="def"  term="Marshalling">
+<p>The process of taking a collection of data items and assembling them
+into a form suitable for transmission in a message</p>
+</div>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
