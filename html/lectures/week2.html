@@ -140,17 +140,14 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="ipc-and-remote-invocation"><a class="header" href="#ipc-and-remote-invocation">IPC and Remote Invocation</a></h1>
-<div class="note"  >
-<p>Related Reading:</p>
-<ul>
-<li><a href="../chapter-4/index.html">Chapter 4 - Interprocess Communication</a></li>
-<li><a href="../chapter-5/index.html">Chapter 5 - Remote Invocation</a></li>
-</ul>
-</div>
+<p>{:.note}
+Related Reading:
+- <a href="../chapter-4/index.html">Chapter 4 - Interprocess Communication</a>
+- <a href="../chapter-5/index.html">Chapter 5 - Remote Invocation</a></p>
 <h2 id="interprocess-communication-ipc"><a class="header" href="#interprocess-communication-ipc">Interprocess Communication (IPC)</a></h2>
 <p>Underlying IPC primitives:</p>
 <ul>
-<li>sockets</li>
+<li>sockets <sup class="footnote-reference"><a href="#1">1</a></sup></li>
 <li>message passing</li>
 <li>multicast support</li>
 <li>overlay network</li>
@@ -210,13 +207,245 @@
 </ul>
 <p>UDP - Echo Server (Java)</p>
 <h3 id="serializationmarshalling"><a class="header" href="#serializationmarshalling">Serialization/Marshalling</a></h3>
-<div class="def"  term="Serialization">
-<p>The process of converting structured data into a byte sequence</p>
-</div>
-<div class="def"  term="Marshalling">
-<p>The process of taking a collection of data items and assembling them
+<p>{:.def term=“Serialization”}
+The process of converting structured data into a byte sequence</p>
+<p>{:.def term=“Marshalling”}
+The process of taking a collection of data items and assembling them
 into a form suitable for transmission in a message</p>
+<h3 id="remote-invocation"><a class="header" href="#remote-invocation">Remote Invocation</a></h3>
+<p>{:.aside}
+It’s impossible for a client to tell whether or not a server has failed!</p>
+<p>Three dominant paradigms:</p>
+<ul>
+<li>request-reply
+<ul>
+<li>pattern on top of message passing which supports two-way exchange
+of messages</li>
+<li>usually encountered in client-server architecture</li>
+<li>relatively low-level</li>
+<li>protocol should handle failures</li>
+</ul>
+</li>
+<li>remote procedure call
+<ul>
+<li>client programs call “procedures” (functions) transparently in
+server program</li>
+<li>usually, client and server run on different computers/machines</li>
+</ul>
+</li>
+<li>remote method invocation (RMI)
+<ul>
+<li>RPC on objects</li>
+<li>one object in one process calls methods of another object in
+another process</li>
+</ul>
+</li>
+</ul>
+<h4 id="request-reply-protocols"><a class="header" href="#request-reply-protocols">Request-Reply Protocols</a></h4>
+<p>Failures</p>
+<ul>
+<li>implementations:
+<ul>
+<li>usually UDP, but TCP is also possible</li>
+<li>can suffer from omission failures</li>
+</ul>
+</li>
+<li>order is not guaranteed</li>
+<li>message identifiers:</li>
+<li>every request gets a unique ID</li>
+<li>usually 32-bit</li>
+<li>request (or reply) is lost
+<ul>
+<li>client waits for result to come and result never appears</li>
+<li>client times out and resends duplicate request</li>
+</ul>
+</li>
+<li>server may receive “duplicate” requests
+<ul>
+<li>server can detect and discard duplicate requests</li>
+<li>server stores result and returns</li>
+<li>server executes the same operation twice
+<ul>
+<li>good for “idempotent” operations <sup class="footnote-reference"><a href="#2">2</a></sup></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="http"><a class="header" href="#http">HTTP</a></h4>
+<ul>
+<li>example of RR protocol
+<ul>
+<li>client requests “web pages” from a <em>web server</em></li>
+</ul>
+</li>
+</ul>
+<p>HTTP is implemented on TCP (server port 80)</p>
+<ul>
+<li>client requests, server accepts connection</li>
+<li>client sends request message to server</li>
+<li>server sends reply message to client</li>
+<li>connection is closed</li>
+</ul>
+<h4 id="rest"><a class="header" href="#rest">REST</a></h4>
+<p>{:.aside}
+REST is a set of architectural constraints, <strong>not a protocol or standard</strong>.</p>
+<ul>
+<li>modern day remote invocation method via HTTP</li>
+<li>REST:
+<ul>
+<li><strong>RE</strong>presentational</li>
+<li><strong>S</strong>tate</li>
+<li><strong>T</strong>ransfer</li>
+</ul>
+</li>
+<li>key issues:
+<ul>
+<li>client transfers a “representation” of the state of the resource
+to the server
+<ul>
+<li>not just GET, PUT but mor einfo in request body</li>
+<li>usually in JSON</li>
+</ul>
+</li>
+<li>server processes request and returns results</li>
+</ul>
+</li>
+<li>REST can be thought of as similar to HTTP but for web pages</li>
+</ul>
+<h3 id="remote-procedure-call-rpc"><a class="header" href="#remote-procedure-call-rpc">Remote Procedure Call (RPC)</a></h3>
+<p>RPC is a major breakthrough in distributed computing! <sup class="footnote-reference"><a href="#3">3</a></sup></p>
+<ul>
+<li>
+<p>allows one program (client) to call a function in another program (server)</p>
+</li>
+<li>
+<p>SUN used this in their Networked File Systems (NFS)</p>
+</li>
+<li>
+<p>Designed in client-server architecture</p>
+</li>
+<li>
+<p>Service interface abstracts the communication</p>
+<ul>
+<li>client only knows <em>what</em> a function does, not <em>how</em></li>
+<li>server implements procedure and executes</li>
+<li>interfaces are usually defined using IDL (Interface Definition
+Language)</li>
+</ul>
+</li>
+</ul>
+<h4 id="rpc-call-semantics"><a class="header" href="#rpc-call-semantics">RPC Call Semantics</a></h4>
+<p>RPC can be implemented via request-reply protocols</p>
+<ul>
+<li>needs stronger guarantees</li>
+</ul>
+<p>Local function calls are <em>exactly-once</em>, but RPC semantics can vary</p>
+<table><thead><tr><th>retransmit request message</th><th>duplicate filtering</th><th>re-execute procedure or retransmit reply</th><th>call semantics</th></tr></thead><tbody>
+<tr><td>no</td><td>n/a</td><td>n/a</td><td>maybe</td></tr>
+<tr><td>yes</td><td>no</td><td>re-execute procedure</td><td>at-least-once</td></tr>
+<tr><td>yes</td><td>no</td><td>re-execute</td><td>at-least-once</td></tr>
+<tr><td>yes</td><td>yes</td><td>retransmit</td><td>at-most-once</td></tr>
+</tbody></table>
+<h4 id="rpc-implementation"><a class="header" href="#rpc-implementation">RPC Implementation</a></h4>
+<p>Client</p>
+<ul>
+<li>for each procedure in service, there’s a <strong>stub</strong> procedure (aka
+<em>proxy</em>)</li>
+<li>stub procedure behaves like it’s running locally
+<ul>
+<li>actually marshals the procedure ID and arguments to the server</li>
+<li>this happens via communication module</li>
+</ul>
+</li>
+</ul>
+<p>Server</p>
+<ul>
+<li>the reverse operation (stub - call)</li>
+<li>dispatcher
+<ul>
+<li>selects appropriate stub to call based on procedure ID</li>
+</ul>
+</li>
+</ul>
+<p>Popular implementations:</p>
+<ul>
+<li>JSON-RPC</li>
+<li>gRPC (Google RPC)
+<ul>
+<li>RPC using protocol buffers <sup class="footnote-reference"><a href="#4">4</a></sup></li>
+</ul>
+</li>
+</ul>
+<h4 id="remote-method-invocation"><a class="header" href="#remote-method-invocation">Remote Method Invocation</a></h4>
+<p>RPC on objects within OOP</p>
+<ul>
+<li>mainly in Java</li>
+</ul>
+<p>Two main concepts:</p>
+<ul>
+<li>remote object references</li>
+<li>remote interfaces</li>
+</ul>
+<p>Popular implementations:</p>
+<ul>
+<li>Java RMI (industry leader for a while back in the 90s)</li>
+<li>CORBA (Common Object Request Broker Architecture)</li>
+</ul>
+<h3 id="rpc-example-in-python"><a class="header" href="#rpc-example-in-python">RPC Example in Python</a></h3>
+<pre><code class="language-python"># server.py
+import datetime
+from xmlrpc.server import SimpleXMLRPCServer
+import xmlrpc.client
+
+def today():
+    today = datetime.datetime.today()
+    return xmlrpc.client.DateTime(today)
+
+def add(x, y):
+    return x + y
+
+server = SimpleXMLRPCServer((&quot;localhost&quot;, 8000))
+
+print(&quot;listening on port 8000&quot;)
+
+server.register_function(today, &quot;today&quot;)
+server.register_function(add, &quot;add&quot;)
+
+server.serve_forever()
+</code></pre>
+<pre><code class="language-python"># client.py
+import xmlrpc.client
+import datetime
+
+proxy = xmlrpc.client.ServerProxy(&quot;http://localhost:8000/&quot;)
+
+today = proxy.today()
+converted = datetime.datetime.strptime(today.value, &quot;%Y%m%dT%H:%M:%S&quot;)
+
+added = proxy.add(1, 2)
+
+print(f&quot;Today: {converted.strftime('%d.%m.%Y, %H:%M')}&quot;)
+print(f&quot;Added: {added}&quot;)
+</code></pre>
+<h1 id="further-reading"><a class="header" href="#further-reading">Further Reading</a></h1>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p>Various socket programming resources:
+<a href="https://beej.us/guide/bgnet/html/index-wide.html">beej’s guide (C)</a> - 
+<a href="https://www.ibm.com/docs/en/zos/2.1.0?topic=interface-sample-c-socket-programs">ibm sample socket programs (C)</a> - 
+<a href="https://www.csd.uoc.gr/%7Ehy556/material/tutorials/cs556-3rd-tutorial.pdf">visuals-heavy ppt</a> - 
+<a href="https://www.binarytides.com/socket-programming-c-linux-tutorial/">code-heavy tutorial</a></p>
 </div>
+<div class="footnote-definition" id="2"><sup class="footnote-definition-label">2</sup>
+<p><a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">AWS - Making Retries Safe with Idempotent APIs</a></p>
+</div>
+<div class="footnote-definition" id="3"><sup class="footnote-definition-label">3</sup>
+<p><a href="https://users.cs.cf.ac.uk/Dave.Marshall/C/node33.html">Dave Marshall - Remote Procedure Calls (in C)</a></p>
+</div>
+<div class="footnote-definition" id="4"><sup class="footnote-definition-label">4</sup>
+<p><a href="https://grpc.io/">gRPC homepage with language-specific tutorials</a></p>
+</div>
+
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">

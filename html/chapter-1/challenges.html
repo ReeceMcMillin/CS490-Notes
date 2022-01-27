@@ -142,23 +142,20 @@
                         <h1 id="challenges"><a class="header" href="#challenges">Challenges</a></h1>
 <h3 id="heterogeneity"><a class="header" href="#heterogeneity">Heterogeneity</a></h3>
 <p>As distributed systems scale, the ability of different systems to talk
-to each other becomes a serious concern.</p>
-<ul>
-<li>the internet allows users to access services and applications from an
-extremely diverse set of devices and networks</li>
-<li>data types may be represented differently on different sorts of
-hardware</li>
-<li>different systems may provide different APIs to the same protocols</li>
-<li>different programming languages use different representations for
-various data structures</li>
-<li>differences must be addressed via <a href="../chapter-4/marshalling.html">marshalling</a>
-if applications using these languages are to communicate with each other</li>
-</ul>
-<div class="def"  term="Middleware">
-<p>A software layer that provides a programming abstraction as
+to each other becomes a serious concern.
+- the internet allows users to access services and applications from an
+extremely diverse set of devices and networks
+- data types may be represented differently on different sorts of
+hardware
+- different systems may provide different APIs to the same protocols
+- different programming languages use different representations for
+various data structures
+- differences must be addressed via <a href="../chapter-4/marshalling.html">marshalling</a>
+if applications using these languages are to communicate with each other</p>
+<p>{:.def term=“Middleware”}
+A software layer that provides a programming abstraction as
 well as masking the heterogeneity of the underlying networks, hardware,
 operating systems, and programming languages.</p>
-</div>
 <p>Most middleware is implemented over the Internet protocols, which
 themselves mask the differences of the underlying network. <em>All</em>
 middleware deals with the differences in operating systems and hardware.
@@ -178,45 +175,39 @@ starting point.</p>
 <p>Systems designed to support resource sharing in this way are termed <em>open distributed systems</em>
 to emphasize the fact that they are extensible.</p>
 <h3 id="security"><a class="header" href="#security">Security</a></h3>
-<p>Security for information resources has 3 components:</p>
-<ul>
-<li>confidentiality</li>
-<li>integrity</li>
-<li>availability</li>
-</ul>
+<p>Security for information resources has 3 components:
+- confidentiality
+- integrity
+- availability</p>
 <h3 id="scalability"><a class="header" href="#scalability">Scalability</a></h3>
 <p>A system is <em>scalable</em> if it will remain effective when there is a
 significant increase in the number of resources and/or users.</p>
-<p>Challenges relating to scalability include:</p>
-<ul>
-<li>controlling the cost of physical resources</li>
-<li>a system with \(n\) users should require at most \(O(n)\)
-additional resources</li>
-<li>controlling the performance loss</li>
-<li>algorithms that use hierarchic structures scale better than
-those that use linear structures</li>
-<li>performance should be no worse that \(O(\log{n})\)</li>
-<li>preventing software resources running out</li>
-<li>consider IPv4</li>
-<li>avoiding performance bottlenecks</li>
-<li>in general, algorithms should be decentralized</li>
-</ul>
+<p>Challenges relating to scalability include:
+- controlling the cost of physical resources
+- a system with \(n\) users should require at most \(O(n)\)
+additional resources
+- controlling the performance loss
+- algorithms that use hierarchic structures scale better than
+those that use linear structures
+- performance should be no worse that \(O(\log{n})\)
+- preventing software resources running out
+- consider IPv4
+- avoiding performance bottlenecks
+- in general, algorithms should be decentralized</p>
 <h3 id="failure-handling"><a class="header" href="#failure-handling">Failure Handling</a></h3>
 <p>Failures in distributed systems are <em>partial</em>, meaning some components
 can fail while others continue to function. Particular techniques for
-dealing with failure might be:</p>
-<ul>
-<li>detecting failure</li>
-<li>not all failures can be detected, but some can!</li>
-<li>masking failure</li>
-<li>messages can be retransmitted, data can be written to multiple
-disks, etc</li>
-<li>tolerating failure</li>
-<li>recovery from failure</li>
-<li>software designed to respond to failure with recovery actions</li>
-<li>redundancy</li>
-<li>no <em>single</em> point of failure - one goes down, the rest cover</li>
-</ul>
+dealing with failure might be:
+- detecting failure
+- not all failures can be detected, but some can!
+- masking failure
+- messages can be retransmitted, data can be written to multiple
+disks, etc
+- tolerating failure
+- recovery from failure
+- software designed to respond to failure with recovery actions
+- redundancy
+- no <em>single</em> point of failure - one goes down, the rest cover</p>
 <p>The availability of a system is a measure of the proportion of time that
 it is available for use.</p>
 <h3 id="concurrency"><a class="header" href="#concurrency">Concurrency</a></h3>
@@ -227,40 +218,36 @@ Chapter 7 and <a href="../chapter-17/index.html">Chapter 17</a>.</p>
 <p><em>Transparency</em> is the concealment of the separation of components in a
 distributed system from both the user and application programmer. This
 has the goal of portraying the system as a <em>whole</em> rather than a
-collection of independent components.</p>
-<ul>
-<li><em><strong>access transparency</strong></em> enables local and remote resources to be
-accessed using identical operations</li>
-<li><em><strong>location transparency</strong></em> enables resources to be accessed without
-knowledge of their physical or network location </li>
-<li><em>concurrency transparency</em> enables several processes to operate
+collection of independent components.
+- <em><strong>access transparency</strong></em> enables local and remote resources to be
+accessed using identical operations
+- <em><strong>location transparency</strong></em> enables resources to be accessed without
+knowledge of their physical or network location 
+- <em>concurrency transparency</em> enables several processes to operate
 concurrently using shared resources without interference between
-them</li>
-<li><em>replication transparency</em> enables multiple instances of resources
+them
+- <em>replication transparency</em> enables multiple instances of resources
 to be used to increase reliability and performance without knowledge
-of the replicas by users or programmers</li>
-<li><em>failure transparency</em> enables concealment of faults, allowing
-users and programs to complete their tasks despite component failure</li>
-<li><em>mobility transparency</em> allows the movement of resources and
+of the replicas by users or programmers
+- <em>failure transparency</em> enables concealment of faults, allowing
+users and programs to complete their tasks despite component failure
+- <em>mobility transparency</em> allows the movement of resources and
 clients within a system without affecting the operation of users or
-programs</li>
-<li><em>performance transparency</em> allows the system to be reconfigured to
-improve performance as loads vary</li>
-<li><em>scaling transparency</em> allows the system and applications to
+programs
+- <em>performance transparency</em> allows the system to be reconfigured to
+improve performance as loads vary
+- <em>scaling transparency</em> allows the system and applications to
 expand in scale without change to the system structure or the
-application algorithms</li>
-</ul>
+application algorithms</p>
 <p>Access transparency and location transparency are the most important and
 are sometimes referred to together as <em>network transparency</em>.</p>
 <h3 id="quality-of-service"><a class="header" href="#quality-of-service">Quality of Service</a></h3>
 <p>The main nonfunctional properties of systems that affect the quality of
-the service experienced by clients and users are:</p>
-<ul>
-<li>reliability</li>
-<li>security</li>
-<li>performance</li>
-<li>adaptability (sometimes)</li>
-</ul>
+the service experienced by clients and users are:
+- reliability
+- security
+- performance
+- adaptability (sometimes)</p>
 
                     </main>
 

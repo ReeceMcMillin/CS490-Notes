@@ -142,13 +142,11 @@
                         <h1 id="architectural-models"><a class="header" href="#architectural-models">Architectural Models</a></h1>
 <p>The architecture of a system refers to its separate components and the
 relationships between them.</p>
-<p>Major concerns: make the system</p>
-<ul>
-<li>reliable</li>
-<li>manageable</li>
-<li>adaptable</li>
-<li>cost-effective</li>
-</ul>
+<p>Major concerns: make the system
+- reliable
+- manageable
+- adaptable
+- cost-effective</p>
 <p>Understanding the trade-offs inherent to choices similar to those identified in this
 section is arguably the key skill in distributed systems design.</p>
 <h2 id="architectural-elements"><a class="header" href="#architectural-elements">Architectural Elements</a></h2>
@@ -255,12 +253,11 @@ invocation</li>
 </ul>
 </li>
 </ul>
-<div class="note"  >
-<p>All of these techniques have one thing in common:
+<p>{:.note}
+All of these techniques have one thing in common:
 communication represents a two-way relationship between a sender and a receiver, with
 senders explicitly direction methods/invocations to the remote
 receivers.</p>
-</div>
 <p>Receivers are typically aware of the identity of senders and both
 typically exist at the same time. There are also indirect methods of
 communication through a third entity allowing for higher decoupling:</p>
@@ -328,10 +325,9 @@ objects between themselves or replicate copies of them on several hosts.</p>
 <ul>
 <li>An example of this architecture is the <em>cluster</em>.</li>
 </ul>
-<div class="def"  term="Cache">
-<p>A store of recently used data objects that is closer to
+<p>{:.def term=“Cache”}
+A store of recently used data objects that is closer to
 one client or a particular set of clients than the objects themselves.</p>
-</div>
 <p>If a client needs an object, the caching service can check a local cache
 first to save retransmitting potentially large payloads.</p>
 <p>Some applications employ <em>mobile code</em>, which relies on a client to
@@ -340,10 +336,8 @@ this is the web, for example old-school Java applets (this book’s
 favorite example).</p>
 <p>Extending that example are <em>mobile agents</em>, running programs that travel
 from one computer to another in a network carrying out a task on
-someone’s behalf and returning with the results.</p>
-<ul>
-<li>applicability may be limited</li>
-</ul>
+someone’s behalf and returning with the results.
+- applicability may be limited</p>
 <h2 id="architectural-patterns"><a class="header" href="#architectural-patterns">Architectural Patterns</a></h2>
 <p>Architectural <em>patterns</em> build on the elements discussed above to
 provide composite structures.</p>
@@ -352,13 +346,11 @@ provide composite structures.</p>
 don’t need to be aware of the implementation details of lower layers.
 This equates to a <em>vertical</em> organization of services into service
 layers.</p>
-<div class="def"  term="Platform">
-<p>Consists of the lowest-level hardware and software layers.</p>
-</div>
-<div class="def"  term="Middleware">
-<p>A layer of software whose purpose is to mask heterogeneity and to
+<p>{:.def term=“Platform”}
+Consists of the lowest-level hardware and software layers.</p>
+<p>{:.def term=“Middleware”}
+A layer of software whose purpose is to mask heterogeneity and to
 provide a convenient programming model to application programmers.</p>
-</div>
 <ul>
 <li>Primarily concerned with raising the level of communication through
 the support of abstractions such as RMI, event notifications,
@@ -387,10 +379,9 @@ client and server processes. This might be done by splitting the
 application logic, leaving some in the client and some in the server.</p>
 <p>In a <strong>three-tier</strong> solution, each aspect has a separate logical or
 physical server. This allows each tier to have a well-defined role.</p>
-<div class="def"  term="Thin Client">
-<p>A software layer that supports a UI local to the user while executing
+<p>{:.def term=“Thin Client”}
+A software layer that supports a UI local to the user while executing
 applications or accessing services on a remote computer.</p>
-</div>
 <h3 id="other-patterns"><a class="header" href="#other-patterns">Other Patterns</a></h3>
 <ul>
 <li>proxy: support <strong>location transparency</strong> in RPC or RMI</li>

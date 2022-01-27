@@ -140,13 +140,10 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="characterization-of-distributed-systems"><a class="header" href="#characterization-of-distributed-systems">Characterization of Distributed Systems</a></h1>
-<div class="note"  >
-<p>Related reading:</p>
-<ul>
-<li><a href="../chapter-1/index.html">Chapter 1 - Characterization of Distributed Systems</a></li>
-<li><a href="../chapter-2/index.html">Chapter 2 - System Models</a></li>
-</ul>
-</div>
+<p>{:.note}
+Related reading:
+- <a href="../chapter-1/index.html">Chapter 1 - Characterization of Distributed Systems</a>
+- <a href="../chapter-2/index.html">Chapter 2 - System Models</a></p>
 <h2 id="administrative"><a class="header" href="#administrative">Administrative</a></h2>
 <ul>
 <li>in-person: tuesday/thursday 11:30-12:45 in Haag 201</li>
@@ -164,12 +161,12 @@
 </li>
 </ul>
 <h3 id="activities"><a class="header" href="#activities">Activities</a></h3>
-<p>| activities | weights |
-| - | - |
-| homework (4) | 40% |
-| programming (2) | 20% |
-| midterm exam | 20% |
-| final exam | 20% |</p>
+<table><thead><tr><th>activities</th><th>weights</th></tr></thead><tbody>
+<tr><td>homework (4)</td><td>40%</td></tr>
+<tr><td>programming (2)</td><td>20%</td></tr>
+<tr><td>midterm exam</td><td>20%</td></tr>
+<tr><td>final exam</td><td>20%</td></tr>
+</tbody></table>
 <ul>
 <li>midterm exam and final exam are mutually exclusive, final not
 comprehensive</li>
@@ -195,18 +192,16 @@ comprehensive</li>
 so the system appears as one machine</li>
 <li>usually use some kind of “client-server” organization</li>
 </ul>
-<div class="def"  term="Distributed System (Tanenbaum)">
-<p>A collection of independent computers that appear to the users of the
+<p>{:.def term=“Distributed System (Tanenbaum)”}
+A collection of independent computers that appear to the users of the
 system as a single computer.</p>
-</div>
 <!--{:def term="term"}
 possibly multi-line definition
 {/def}-->
-<div class="def"  term="Distributed System (textbook)">
-<p>A system in which hardware or software components located at networked
+<p>{:.def term=“Distributed System (textbook)”}
+A system in which hardware or software components located at networked
 computers communicate and coordinate their actions only by passing
 messages.</p>
-</div>
 <p>A <strong>message</strong> has some sort of <em>semantic meaning</em> - more than just bits and bytes</p>
 <p>A communication network itself is not a distributed system unless
 certain “applications” are running on it</p>
@@ -218,11 +213,10 @@ certain “applications” are running on it</p>
 </ul>
 </li>
 </ul>
-<div class="def"  term="Distributed System (class)">
-<p>A collection of <em>entities</em>, each of which is <em>autonomous, programmable,
+<p>{:.def term=“Distributed System (class)”}
+A collection of <em>entities</em>, each of which is <em>autonomous, programmable,
 and failure-prone</em>, and which communicate through an <em>unreliable</em>
 communication medium.</p>
-</div>
 <ul>
 <li>Entity: a “process” on a device</li>
 <li>Communication media: wired or wireless</li>
@@ -258,11 +252,10 @@ the participating nodes</li>
 </ul>
 </li>
 </ul>
-<div class="def"  term="Cloud Computing">
-<p>The term applied to distributed computing infrastructure packaged as a
+<p>{:.def term=“Cloud Computing”}
+The term applied to distributed computing infrastructure packaged as a
 utility - computing resources are <em>rented</em> rather than owned by
 end-users.</p>
-</div>
 <p>The cloud computing model can be applied to physical resources as well
 as logical resources.</p>
 <p>Challenges in Distributed Systems</p>
@@ -471,10 +464,9 @@ provide abstract interfaces for higher-level services to call</li>
 </ul>
 </li>
 </ul>
-<div class="def"  term="Distributed Algorithm">
-<p>A sequence of steps, including sending and receiving of messages and
+<p>{:.def term=“Distributed Algorithm”}
+A sequence of steps, including sending and receiving of messages and
 update internal state within each process.</p>
-</div>
 <ul>
 <li>two variants based on <strong>bound on timing of events</strong></li>
 <li>synchronous systems

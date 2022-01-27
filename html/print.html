@@ -153,37 +153,28 @@ tables and checklists</li>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="book"><a class="header" href="#book">Book</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="characterization-of-distributed-systems"><a class="header" href="#characterization-of-distributed-systems">Characterization of Distributed Systems</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
-<div class="def"  term="Distributed System">
-<p>A system in which hardware or software components located at networked computers communicate and coordinate their actions <em>only</em> by passing messages.</p>
-</div>
-<p>This definition has several consequences:</p>
-<ul>
-<li>concurrency</li>
-<li>no global clock</li>
-<li>independent failures</li>
-</ul>
+<p>{:.def term=“Distributed System”}
+A system in which hardware or software components located at networked computers communicate and coordinate their actions <em>only</em> by passing messages.</p>
+<p>This definition has several consequences:
+- concurrency
+- no global clock
+- independent failures</p>
 <p>The prime motivation for constructing and using distributed systems
-stems from a desire to <em>share resources</em>.</p>
-<ul>
-<li>a <em>resource</em> can range from hardware components to software resources</li>
-</ul>
+stems from a desire to <em>share resources</em>.
+- a <em>resource</em> can range from hardware components to software resources</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="examples-of-distributed-systems"><a class="header" href="#examples-of-distributed-systems">Examples of Distributed Systems</a></h1>
 <h2 id="web-search"><a class="header" href="#web-search">Web Search</a></h2>
 <p>Google has put significant effort into distributed system design through
-things like:</p>
-<ul>
-<li>distributed physical infrastructure</li>
-<li>distributed file systems</li>
-<li>distributed <em>storage</em> systems</li>
-<li>distributed lock service</li>
-<li>programming model that supports parallel/distributed computations</li>
-</ul>
+things like:
+- distributed physical infrastructure
+- distributed file systems
+- distributed <em>storage</em> systems
+- distributed lock service
+- programming model that supports parallel/distributed computations</p>
 <h2 id="mmorpgs"><a class="header" href="#mmorpgs">MMORPGs</a></h2>
-<p>Online games rely on distributed systems for reasons such as:</p>
-<ul>
-<li>players require fast response times</li>
-<li>events must propagate in real time to many players</li>
-</ul>
+<p>Online games rely on distributed systems for reasons such as:
+- players require fast response times
+- events must propagate in real time to many players</p>
 <h2 id="financial-trading"><a class="header" href="#financial-trading">Financial Trading</a></h2>
 <p>The financial industry has long been at the cutting edge of distributed
 systems technology. Emphasis is on the communication and processing of
@@ -197,17 +188,14 @@ systems</em> and are covered more in <a href="chapter-1/../chapter-6/index.html"
 <p>Increasingly, companies use techniques such as <em>location-aware</em> or
 <em>context-aware</em> computing to provide users with highly targeted content.
 This level of mobility also introduces new challenges for distributed
-systems, such as:</p>
-<ul>
-<li>variable connectivity</li>
-<li>outright disconnection</li>
-<li>maintain operation in the face of mobility</li>
-</ul>
-<div class="def"  term="Ubiquitous Computing">
-<p>The harnessing of many small, cheap computational
+systems, such as:
+- variable connectivity
+- outright disconnection
+- maintain operation in the face of mobility</p>
+<p>{:.def term=“Ubiquitous Computing”}
+The harnessing of many small, cheap computational
 devices that are present in users’ physical environments, including
 home, office, and natural settings.</p>
-</div>
 <p>The suggestion with ubiquitous computing is that, eventually, computing
 devices will be so pervasive that they’re scarcely noticed. Their
 computational behavior will be transparently and intimately tied with
@@ -224,74 +212,62 @@ discovery</em>.</p>
 <p>The crucial characteristic of continuous media types is that they
 include a <em>temporal</em> dimension. For example, there may be restrictions
 on minimum acceptable FPS throughput or real-time latency.</p>
-<p>Distributed multimedia systems are largely concerned with:</p>
-<ul>
-<li>providing support for an extensible range of formats</li>
-<li>providing a range of mechanisms to ensure a desired quality</li>
-<li>providing resource management strategies</li>
-<li>providing adaptation strategies to deal with loss of
-quality/service</li>
-</ul>
+<p>Distributed multimedia systems are largely concerned with:
+- providing support for an extensible range of formats
+- providing a range of mechanisms to ensure a desired quality
+- providing resource management strategies
+- providing adaptation strategies to deal with loss of
+quality/service</p>
 <h2 id="distributed-computing-as-a-utility"><a class="header" href="#distributed-computing-as-a-utility">Distributed Computing as a Utility</a></h2>
 <p>Many companies have an interest in promoting distributed resources as a
 commodity or utility in the style of water or electricity. This opens
 the door for a <em>rent-based</em> service model rather than an ownership-based
-model.</p>
-<ul>
-<li>SaaS, IaaS, *aaS</li>
-</ul>
-<div class="def"  term="Cloud">
-<p>A set of internet-based application, storage, and computing
+model.
+- SaaS, IaaS, *aaS</p>
+<p>{:.def term=“Cloud”}
+A set of internet-based application, storage, and computing
 services sufficient to support most users’ needs, thus enabling them to
 largely or totally dispense with local data storage and application
 software.</p>
-</div>
 <p>Clouds are generally implemented on <em>cluster computers</em>, sets of
 interconnected computers that cooperate closely to provide a single,
 integrated high-performance computing capability.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="focus-on-resource-sharing"><a class="header" href="#focus-on-resource-sharing">Focus on Resource Sharing</a></h1>
 <p>Patterns of resource sharing vary widely in their scope and how closely
-users are tied together.</p>
-<ul>
-<li>search engine users never need to know about one another</li>
-<li>cooperative workers in a particular organization may share <em>every</em>
-document together</li>
-</ul>
-<div class="def"  term="Service">
-<p>A distinct part of a computer system that manages a collection
+users are tied together.
+- search engine users never need to know about one another
+- cooperative workers in a particular organization may share <em>every</em>
+document together</p>
+<p>{:.def term=“Service”}
+A distinct part of a computer system that manages a collection
 of related resources and presents their functionality to users and
 applications.</p>
-</div>
 <p>Resources in a distributed system are managed by a program that offers a
 communication interface enabling the resource to be accessed and updated
 reliably and constantly.</p>
-<div class="def"  term="Server">
-<p>A running program (a <em>process</em>) on a networked computer that
+<p>{:.def term=“Server”}
+A running program (a <em>process</em>) on a networked computer that
 accepts requests from programs running on other computers to perform a
 service and responds appropriately.</p>
-</div>
 <p>The requesting processes are referred to as <em>clients</em>, and the overall
 approach is known as <em>client-server computing</em>.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="challenges"><a class="header" href="#challenges">Challenges</a></h1>
 <h3 id="heterogeneity"><a class="header" href="#heterogeneity">Heterogeneity</a></h3>
 <p>As distributed systems scale, the ability of different systems to talk
-to each other becomes a serious concern.</p>
-<ul>
-<li>the internet allows users to access services and applications from an
-extremely diverse set of devices and networks</li>
-<li>data types may be represented differently on different sorts of
-hardware</li>
-<li>different systems may provide different APIs to the same protocols</li>
-<li>different programming languages use different representations for
-various data structures</li>
-<li>differences must be addressed via <a href="chapter-1/../chapter-4/marshalling.html">marshalling</a>
-if applications using these languages are to communicate with each other</li>
-</ul>
-<div class="def"  term="Middleware">
-<p>A software layer that provides a programming abstraction as
+to each other becomes a serious concern.
+- the internet allows users to access services and applications from an
+extremely diverse set of devices and networks
+- data types may be represented differently on different sorts of
+hardware
+- different systems may provide different APIs to the same protocols
+- different programming languages use different representations for
+various data structures
+- differences must be addressed via <a href="chapter-1/../chapter-4/marshalling.html">marshalling</a>
+if applications using these languages are to communicate with each other</p>
+<p>{:.def term=“Middleware”}
+A software layer that provides a programming abstraction as
 well as masking the heterogeneity of the underlying networks, hardware,
 operating systems, and programming languages.</p>
-</div>
 <p>Most middleware is implemented over the Internet protocols, which
 themselves mask the differences of the underlying network. <em>All</em>
 middleware deals with the differences in operating systems and hardware.
@@ -311,45 +287,39 @@ starting point.</p>
 <p>Systems designed to support resource sharing in this way are termed <em>open distributed systems</em>
 to emphasize the fact that they are extensible.</p>
 <h3 id="security"><a class="header" href="#security">Security</a></h3>
-<p>Security for information resources has 3 components:</p>
-<ul>
-<li>confidentiality</li>
-<li>integrity</li>
-<li>availability</li>
-</ul>
+<p>Security for information resources has 3 components:
+- confidentiality
+- integrity
+- availability</p>
 <h3 id="scalability"><a class="header" href="#scalability">Scalability</a></h3>
 <p>A system is <em>scalable</em> if it will remain effective when there is a
 significant increase in the number of resources and/or users.</p>
-<p>Challenges relating to scalability include:</p>
-<ul>
-<li>controlling the cost of physical resources</li>
-<li>a system with \(n\) users should require at most \(O(n)\)
-additional resources</li>
-<li>controlling the performance loss</li>
-<li>algorithms that use hierarchic structures scale better than
-those that use linear structures</li>
-<li>performance should be no worse that \(O(\log{n})\)</li>
-<li>preventing software resources running out</li>
-<li>consider IPv4</li>
-<li>avoiding performance bottlenecks</li>
-<li>in general, algorithms should be decentralized</li>
-</ul>
+<p>Challenges relating to scalability include:
+- controlling the cost of physical resources
+- a system with \(n\) users should require at most \(O(n)\)
+additional resources
+- controlling the performance loss
+- algorithms that use hierarchic structures scale better than
+those that use linear structures
+- performance should be no worse that \(O(\log{n})\)
+- preventing software resources running out
+- consider IPv4
+- avoiding performance bottlenecks
+- in general, algorithms should be decentralized</p>
 <h3 id="failure-handling"><a class="header" href="#failure-handling">Failure Handling</a></h3>
 <p>Failures in distributed systems are <em>partial</em>, meaning some components
 can fail while others continue to function. Particular techniques for
-dealing with failure might be:</p>
-<ul>
-<li>detecting failure</li>
-<li>not all failures can be detected, but some can!</li>
-<li>masking failure</li>
-<li>messages can be retransmitted, data can be written to multiple
-disks, etc</li>
-<li>tolerating failure</li>
-<li>recovery from failure</li>
-<li>software designed to respond to failure with recovery actions</li>
-<li>redundancy</li>
-<li>no <em>single</em> point of failure - one goes down, the rest cover</li>
-</ul>
+dealing with failure might be:
+- detecting failure
+- not all failures can be detected, but some can!
+- masking failure
+- messages can be retransmitted, data can be written to multiple
+disks, etc
+- tolerating failure
+- recovery from failure
+- software designed to respond to failure with recovery actions
+- redundancy
+- no <em>single</em> point of failure - one goes down, the rest cover</p>
 <p>The availability of a system is a measure of the proportion of time that
 it is available for use.</p>
 <h3 id="concurrency"><a class="header" href="#concurrency">Concurrency</a></h3>
@@ -360,40 +330,36 @@ Chapter 7 and <a href="chapter-1/../chapter-17/index.html">Chapter 17</a>.</p>
 <p><em>Transparency</em> is the concealment of the separation of components in a
 distributed system from both the user and application programmer. This
 has the goal of portraying the system as a <em>whole</em> rather than a
-collection of independent components.</p>
-<ul>
-<li><em><strong>access transparency</strong></em> enables local and remote resources to be
-accessed using identical operations</li>
-<li><em><strong>location transparency</strong></em> enables resources to be accessed without
-knowledge of their physical or network location </li>
-<li><em>concurrency transparency</em> enables several processes to operate
+collection of independent components.
+- <em><strong>access transparency</strong></em> enables local and remote resources to be
+accessed using identical operations
+- <em><strong>location transparency</strong></em> enables resources to be accessed without
+knowledge of their physical or network location 
+- <em>concurrency transparency</em> enables several processes to operate
 concurrently using shared resources without interference between
-them</li>
-<li><em>replication transparency</em> enables multiple instances of resources
+them
+- <em>replication transparency</em> enables multiple instances of resources
 to be used to increase reliability and performance without knowledge
-of the replicas by users or programmers</li>
-<li><em>failure transparency</em> enables concealment of faults, allowing
-users and programs to complete their tasks despite component failure</li>
-<li><em>mobility transparency</em> allows the movement of resources and
+of the replicas by users or programmers
+- <em>failure transparency</em> enables concealment of faults, allowing
+users and programs to complete their tasks despite component failure
+- <em>mobility transparency</em> allows the movement of resources and
 clients within a system without affecting the operation of users or
-programs</li>
-<li><em>performance transparency</em> allows the system to be reconfigured to
-improve performance as loads vary</li>
-<li><em>scaling transparency</em> allows the system and applications to
+programs
+- <em>performance transparency</em> allows the system to be reconfigured to
+improve performance as loads vary
+- <em>scaling transparency</em> allows the system and applications to
 expand in scale without change to the system structure or the
-application algorithms</li>
-</ul>
+application algorithms</p>
 <p>Access transparency and location transparency are the most important and
 are sometimes referred to together as <em>network transparency</em>.</p>
 <h3 id="quality-of-service"><a class="header" href="#quality-of-service">Quality of Service</a></h3>
 <p>The main nonfunctional properties of systems that affect the quality of
-the service experienced by clients and users are:</p>
-<ul>
-<li>reliability</li>
-<li>security</li>
-<li>performance</li>
-<li>adaptability (sometimes)</li>
-</ul>
+the service experienced by clients and users are:
+- reliability
+- security
+- performance
+- adaptability (sometimes)</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="case-study-the-world-wide-web"><a class="header" href="#case-study-the-world-wide-web">Case Study: The World Wide Web</a></h1>
 <p>This was basically just a summary of HTML, URLs, and HTTP. Not missing a
 ton.</p>
@@ -421,11 +387,10 @@ that can be exhibited by processes and channels.</li>
 communication channels.</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="physical-models"><a class="header" href="#physical-models">Physical Models</a></h1>
-<div class="def"  >
-<p>A <strong>physical model</strong> is a representation of the underlying hardware
+<p>{:.def}
+A <strong>physical model</strong> is a representation of the underlying hardware
 elements of a distributed system that abstracts away from specific
 details of the computer and networking technologies involved.</p>
-</div>
 <p>Baseline model: an extensible set of computer nodes interconnected by a
 network for the required passing of messages.</p>
 <p>Three generations of distributed systems:</p>
@@ -460,13 +425,11 @@ of devices and variation in networking technologies.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="architectural-models"><a class="header" href="#architectural-models">Architectural Models</a></h1>
 <p>The architecture of a system refers to its separate components and the
 relationships between them.</p>
-<p>Major concerns: make the system</p>
-<ul>
-<li>reliable</li>
-<li>manageable</li>
-<li>adaptable</li>
-<li>cost-effective</li>
-</ul>
+<p>Major concerns: make the system
+- reliable
+- manageable
+- adaptable
+- cost-effective</p>
 <p>Understanding the trade-offs inherent to choices similar to those identified in this
 section is arguably the key skill in distributed systems design.</p>
 <h2 id="architectural-elements"><a class="header" href="#architectural-elements">Architectural Elements</a></h2>
@@ -573,12 +536,11 @@ invocation</li>
 </ul>
 </li>
 </ul>
-<div class="note"  >
-<p>All of these techniques have one thing in common:
+<p>{:.note}
+All of these techniques have one thing in common:
 communication represents a two-way relationship between a sender and a receiver, with
 senders explicitly direction methods/invocations to the remote
 receivers.</p>
-</div>
 <p>Receivers are typically aware of the identity of senders and both
 typically exist at the same time. There are also indirect methods of
 communication through a third entity allowing for higher decoupling:</p>
@@ -646,10 +608,9 @@ objects between themselves or replicate copies of them on several hosts.</p>
 <ul>
 <li>An example of this architecture is the <em>cluster</em>.</li>
 </ul>
-<div class="def"  term="Cache">
-<p>A store of recently used data objects that is closer to
+<p>{:.def term=“Cache”}
+A store of recently used data objects that is closer to
 one client or a particular set of clients than the objects themselves.</p>
-</div>
 <p>If a client needs an object, the caching service can check a local cache
 first to save retransmitting potentially large payloads.</p>
 <p>Some applications employ <em>mobile code</em>, which relies on a client to
@@ -658,10 +619,8 @@ this is the web, for example old-school Java applets (this book’s
 favorite example).</p>
 <p>Extending that example are <em>mobile agents</em>, running programs that travel
 from one computer to another in a network carrying out a task on
-someone’s behalf and returning with the results.</p>
-<ul>
-<li>applicability may be limited</li>
-</ul>
+someone’s behalf and returning with the results.
+- applicability may be limited</p>
 <h2 id="architectural-patterns"><a class="header" href="#architectural-patterns">Architectural Patterns</a></h2>
 <p>Architectural <em>patterns</em> build on the elements discussed above to
 provide composite structures.</p>
@@ -670,13 +629,11 @@ provide composite structures.</p>
 don’t need to be aware of the implementation details of lower layers.
 This equates to a <em>vertical</em> organization of services into service
 layers.</p>
-<div class="def"  term="Platform">
-<p>Consists of the lowest-level hardware and software layers.</p>
-</div>
-<div class="def"  term="Middleware">
-<p>A layer of software whose purpose is to mask heterogeneity and to
+<p>{:.def term=“Platform”}
+Consists of the lowest-level hardware and software layers.</p>
+<p>{:.def term=“Middleware”}
+A layer of software whose purpose is to mask heterogeneity and to
 provide a convenient programming model to application programmers.</p>
-</div>
 <ul>
 <li>Primarily concerned with raising the level of communication through
 the support of abstractions such as RMI, event notifications,
@@ -705,10 +662,9 @@ client and server processes. This might be done by splitting the
 application logic, leaving some in the client and some in the server.</p>
 <p>In a <strong>three-tier</strong> solution, each aspect has a separate logical or
 physical server. This allows each tier to have a well-defined role.</p>
-<div class="def"  term="Thin Client">
-<p>A software layer that supports a UI local to the user while executing
+<p>{:.def term=“Thin Client”}
+A software layer that supports a UI local to the user while executing
 applications or accessing services on a remote computer.</p>
-</div>
 <h3 id="other-patterns"><a class="header" href="#other-patterns">Other Patterns</a></h3>
 <ul>
 <li>proxy: support <strong>location transparency</strong> in RPC or RMI</li>
@@ -795,13 +751,10 @@ applications or accessing services on a remote computer.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="designing-distributed-systems---google-case-study"><a class="header" href="#designing-distributed-systems---google-case-study">Designing Distributed Systems - Google Case Study</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="lectures"><a class="header" href="#lectures">Lectures</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="characterization-of-distributed-systems-1"><a class="header" href="#characterization-of-distributed-systems-1">Characterization of Distributed Systems</a></h1>
-<div class="note"  >
-<p>Related reading:</p>
-<ul>
-<li><a href="lectures/../chapter-1/index.html">Chapter 1 - Characterization of Distributed Systems</a></li>
-<li><a href="lectures/../chapter-2/index.html">Chapter 2 - System Models</a></li>
-</ul>
-</div>
+<p>{:.note}
+Related reading:
+- <a href="lectures/../chapter-1/index.html">Chapter 1 - Characterization of Distributed Systems</a>
+- <a href="lectures/../chapter-2/index.html">Chapter 2 - System Models</a></p>
 <h2 id="administrative"><a class="header" href="#administrative">Administrative</a></h2>
 <ul>
 <li>in-person: tuesday/thursday 11:30-12:45 in Haag 201</li>
@@ -819,12 +772,12 @@ applications or accessing services on a remote computer.</p>
 </li>
 </ul>
 <h3 id="activities"><a class="header" href="#activities">Activities</a></h3>
-<p>| activities | weights |
-| - | - |
-| homework (4) | 40% |
-| programming (2) | 20% |
-| midterm exam | 20% |
-| final exam | 20% |</p>
+<table><thead><tr><th>activities</th><th>weights</th></tr></thead><tbody>
+<tr><td>homework (4)</td><td>40%</td></tr>
+<tr><td>programming (2)</td><td>20%</td></tr>
+<tr><td>midterm exam</td><td>20%</td></tr>
+<tr><td>final exam</td><td>20%</td></tr>
+</tbody></table>
 <ul>
 <li>midterm exam and final exam are mutually exclusive, final not
 comprehensive</li>
@@ -850,18 +803,16 @@ comprehensive</li>
 so the system appears as one machine</li>
 <li>usually use some kind of “client-server” organization</li>
 </ul>
-<div class="def"  term="Distributed System (Tanenbaum)">
-<p>A collection of independent computers that appear to the users of the
+<p>{:.def term=“Distributed System (Tanenbaum)”}
+A collection of independent computers that appear to the users of the
 system as a single computer.</p>
-</div>
 <!--{:def term="term"}
 possibly multi-line definition
 {/def}-->
-<div class="def"  term="Distributed System (textbook)">
-<p>A system in which hardware or software components located at networked
+<p>{:.def term=“Distributed System (textbook)”}
+A system in which hardware or software components located at networked
 computers communicate and coordinate their actions only by passing
 messages.</p>
-</div>
 <p>A <strong>message</strong> has some sort of <em>semantic meaning</em> - more than just bits and bytes</p>
 <p>A communication network itself is not a distributed system unless
 certain “applications” are running on it</p>
@@ -873,11 +824,10 @@ certain “applications” are running on it</p>
 </ul>
 </li>
 </ul>
-<div class="def"  term="Distributed System (class)">
-<p>A collection of <em>entities</em>, each of which is <em>autonomous, programmable,
+<p>{:.def term=“Distributed System (class)”}
+A collection of <em>entities</em>, each of which is <em>autonomous, programmable,
 and failure-prone</em>, and which communicate through an <em>unreliable</em>
 communication medium.</p>
-</div>
 <ul>
 <li>Entity: a “process” on a device</li>
 <li>Communication media: wired or wireless</li>
@@ -913,11 +863,10 @@ the participating nodes</li>
 </ul>
 </li>
 </ul>
-<div class="def"  term="Cloud Computing">
-<p>The term applied to distributed computing infrastructure packaged as a
+<p>{:.def term=“Cloud Computing”}
+The term applied to distributed computing infrastructure packaged as a
 utility - computing resources are <em>rented</em> rather than owned by
 end-users.</p>
-</div>
 <p>The cloud computing model can be applied to physical resources as well
 as logical resources.</p>
 <p>Challenges in Distributed Systems</p>
@@ -1126,10 +1075,9 @@ provide abstract interfaces for higher-level services to call</li>
 </ul>
 </li>
 </ul>
-<div class="def"  term="Distributed Algorithm">
-<p>A sequence of steps, including sending and receiving of messages and
+<p>{:.def term=“Distributed Algorithm”}
+A sequence of steps, including sending and receiving of messages and
 update internal state within each process.</p>
-</div>
 <ul>
 <li>two variants based on <strong>bound on timing of events</strong></li>
 <li>synchronous systems
@@ -1197,17 +1145,14 @@ What sorts of failures are we assuming?</p>
 <li>arbitrary (byzantine)</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="ipc-and-remote-invocation"><a class="header" href="#ipc-and-remote-invocation">IPC and Remote Invocation</a></h1>
-<div class="note"  >
-<p>Related Reading:</p>
-<ul>
-<li><a href="lectures/../chapter-4/index.html">Chapter 4 - Interprocess Communication</a></li>
-<li><a href="lectures/../chapter-5/index.html">Chapter 5 - Remote Invocation</a></li>
-</ul>
-</div>
+<p>{:.note}
+Related Reading:
+- <a href="lectures/../chapter-4/index.html">Chapter 4 - Interprocess Communication</a>
+- <a href="lectures/../chapter-5/index.html">Chapter 5 - Remote Invocation</a></p>
 <h2 id="interprocess-communication-ipc"><a class="header" href="#interprocess-communication-ipc">Interprocess Communication (IPC)</a></h2>
 <p>Underlying IPC primitives:</p>
 <ul>
-<li>sockets</li>
+<li>sockets <sup class="footnote-reference"><a href="#1">1</a></sup></li>
 <li>message passing</li>
 <li>multicast support</li>
 <li>overlay network</li>
@@ -1267,89 +1212,297 @@ What sorts of failures are we assuming?</p>
 </ul>
 <p>UDP - Echo Server (Java)</p>
 <h3 id="serializationmarshalling"><a class="header" href="#serializationmarshalling">Serialization/Marshalling</a></h3>
-<div class="def"  term="Serialization">
-<p>The process of converting structured data into a byte sequence</p>
-</div>
-<div class="def"  term="Marshalling">
-<p>The process of taking a collection of data items and assembling them
+<p>{:.def term=“Serialization”}
+The process of converting structured data into a byte sequence</p>
+<p>{:.def term=“Marshalling”}
+The process of taking a collection of data items and assembling them
 into a form suitable for transmission in a message</p>
-</div><div style="break-before: page; page-break-before: always;"></div><h1 id="indirect-communication-1"><a class="header" href="#indirect-communication-1">Indirect Communication</a></h1>
-<div class="note"  >
-<p>Related Reading:</p>
+<h3 id="remote-invocation-1"><a class="header" href="#remote-invocation-1">Remote Invocation</a></h3>
+<p>{:.aside}
+It’s impossible for a client to tell whether or not a server has failed!</p>
+<p>Three dominant paradigms:</p>
 <ul>
-<li><a href="lectures/../chapter-6/index.html">Chapter 6 - Indirect Communication</a></li>
-</ul>
-</div><div style="break-before: page; page-break-before: always;"></div><h1 id="notion-of-time-in-distributed-computing"><a class="header" href="#notion-of-time-in-distributed-computing">Notion of Time in Distributed Computing</a></h1>
-<div class="note"  >
-<p>Related Reading:</p>
+<li>request-reply
 <ul>
-<li><a href="lectures/../chapter-14/index.html">Chapter 14 - Time and Global States</a></li>
+<li>pattern on top of message passing which supports two-way exchange
+of messages</li>
+<li>usually encountered in client-server architecture</li>
+<li>relatively low-level</li>
+<li>protocol should handle failures</li>
 </ul>
-</div><div style="break-before: page; page-break-before: always;"></div><h1 id="logical-clocks-global-states"><a class="header" href="#logical-clocks-global-states">Logical Clocks, Global States</a></h1>
-<div class="note"  >
-<p>Related Reading:</p>
+</li>
+<li>remote procedure call
 <ul>
-<li><a href="lectures/../chapter-14/logical-time.html">Chapter 14, Sections 14.4-14.5 - Logical Clocks, Global States</a></li>
+<li>client programs call “procedures” (functions) transparently in
+server program</li>
+<li>usually, client and server run on different computers/machines</li>
 </ul>
-</div><div style="break-before: page; page-break-before: always;"></div><h1 id="distributed-algorithms---mutual-exclusion"><a class="header" href="#distributed-algorithms---mutual-exclusion">Distributed Algorithms - Mutual Exclusion</a></h1>
-<div class="note"  >
-<p>Related Reading:</p>
+</li>
+<li>remote method invocation (RMI)
 <ul>
-<li><a href="lectures/../chapter-15/distributed-exclusion.html">15.1, 15.2 - Mutual Exclusion</a></li>
+<li>RPC on objects</li>
+<li>one object in one process calls methods of another object in
+another process</li>
 </ul>
-</div><div style="break-before: page; page-break-before: always;"></div><h1 id="distributed-algorithms---leader-election"><a class="header" href="#distributed-algorithms---leader-election">Distributed Algorithms - Leader Election</a></h1>
-<div class="note"  >
-<p>Related Reading:</p>
+</li>
+</ul>
+<h4 id="request-reply-protocols-1"><a class="header" href="#request-reply-protocols-1">Request-Reply Protocols</a></h4>
+<p>Failures</p>
 <ul>
-<li><a href="lectures/../chapter-15/elections.html">15.3 - Elections</a></li>
-</ul>
-</div><div style="break-before: page; page-break-before: always;"></div><h1 id="distributed-coordination---group-communication"><a class="header" href="#distributed-coordination---group-communication">Distributed Coordination - Group Communication</a></h1>
-<div class="note"  >
-<p>Related Reading:</p>
+<li>implementations:
 <ul>
-<li><a href="lectures/../chapter-15/coordination.html">15.4 - Coordination and Agreement in Group Communication</a></li>
+<li>usually UDP, but TCP is also possible</li>
+<li>can suffer from omission failures</li>
 </ul>
-</div><div style="break-before: page; page-break-before: always;"></div><h1 id="distributed-coordination---consensus"><a class="header" href="#distributed-coordination---consensus">Distributed Coordination - Consensus</a></h1>
-<div class="note"  >
-<p>Related Reading:</p>
+</li>
+<li>order is not guaranteed</li>
+<li>message identifiers:</li>
+<li>every request gets a unique ID</li>
+<li>usually 32-bit</li>
+<li>request (or reply) is lost
 <ul>
-<li><a href="lectures/../chapter-15/consensus.html">15.5 - Consensus and Related Problems</a></li>
+<li>client waits for result to come and result never appears</li>
+<li>client times out and resends duplicate request</li>
 </ul>
-</div><div style="break-before: page; page-break-before: always;"></div><h1 id="distributed-file-systems-1"><a class="header" href="#distributed-file-systems-1">Distributed File Systems</a></h1>
-<div class="note"  >
-<p>Related Reading:</p>
+</li>
+<li>server may receive “duplicate” requests
 <ul>
-<li><a href="lectures/../chapter-12/index.html">Chapter 12 - Distributed File Systems</a></li>
-</ul>
-</div><div style="break-before: page; page-break-before: always;"></div><h1 id="spring-break"><a class="header" href="#spring-break">Spring Break</a></h1>
-<div class="note"  >
-<p>stop studying please ur burn’t out</p>
-</div><div style="break-before: page; page-break-before: always;"></div><h1 id="distributed-transactions-1"><a class="header" href="#distributed-transactions-1">Distributed Transactions</a></h1>
-<div class="note"  >
-<p>Related Reading:</p>
+<li>server can detect and discard duplicate requests</li>
+<li>server stores result and returns</li>
+<li>server executes the same operation twice
 <ul>
-<li><a href="lectures/../chapter-17/index.html">Chapter 17 - Distributed Transactions</a></li>
+<li>good for “idempotent” operations <sup class="footnote-reference"><a href="#2">2</a></sup></li>
 </ul>
-</div><div style="break-before: page; page-break-before: always;"></div><h1 id="replication-1"><a class="header" href="#replication-1">Replication</a></h1>
-<div class="note"  >
-<p>Related Reading:</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="http"><a class="header" href="#http">HTTP</a></h4>
 <ul>
-<li><a href="lectures/../chapter-18/index.html">Chapter 18 - Replication</a></li>
-</ul>
-</div><div style="break-before: page; page-break-before: always;"></div><h1 id="p2p-systems-1"><a class="header" href="#p2p-systems-1">P2P Systems</a></h1>
-<div class="note"  >
-<p>Related Reading:</p>
+<li>example of RR protocol
 <ul>
-<li><a href="lectures/../chapter-10/index.html">Chapter 10 - Peer-to-Peer Systems</a></li>
+<li>client requests “web pages” from a <em>web server</em></li>
 </ul>
-</div><div style="break-before: page; page-break-before: always;"></div><h1 id="distributed-system-case-study"><a class="header" href="#distributed-system-case-study">Distributed System Case-Study</a></h1>
-<div class="note"  >
-<p>Related Reading:</p>
+</li>
+</ul>
+<p>HTTP is implemented on TCP (server port 80)</p>
 <ul>
-<li><a href="https://static.googleusercontent.com/media/research.google.com/en//archive/mapreduce-osdi04.pdf">Original MapReduce Paper</a></li>
-<li><a href="lectures/../chapter-21/index.html">Chapter 21 - Google Case Study</a></li>
+<li>client requests, server accepts connection</li>
+<li>client sends request message to server</li>
+<li>server sends reply message to client</li>
+<li>connection is closed</li>
 </ul>
-</div><div style="break-before: page; page-break-before: always;"></div><h1 id="final-exam"><a class="header" href="#final-exam">Final Exam</a></h1>
+<h4 id="rest"><a class="header" href="#rest">REST</a></h4>
+<p>{:.aside}
+REST is a set of architectural constraints, <strong>not a protocol or standard</strong>.</p>
+<ul>
+<li>modern day remote invocation method via HTTP</li>
+<li>REST:
+<ul>
+<li><strong>RE</strong>presentational</li>
+<li><strong>S</strong>tate</li>
+<li><strong>T</strong>ransfer</li>
+</ul>
+</li>
+<li>key issues:
+<ul>
+<li>client transfers a “representation” of the state of the resource
+to the server
+<ul>
+<li>not just GET, PUT but mor einfo in request body</li>
+<li>usually in JSON</li>
+</ul>
+</li>
+<li>server processes request and returns results</li>
+</ul>
+</li>
+<li>REST can be thought of as similar to HTTP but for web pages</li>
+</ul>
+<h3 id="remote-procedure-call-rpc"><a class="header" href="#remote-procedure-call-rpc">Remote Procedure Call (RPC)</a></h3>
+<p>RPC is a major breakthrough in distributed computing! <sup class="footnote-reference"><a href="#3">3</a></sup></p>
+<ul>
+<li>
+<p>allows one program (client) to call a function in another program (server)</p>
+</li>
+<li>
+<p>SUN used this in their Networked File Systems (NFS)</p>
+</li>
+<li>
+<p>Designed in client-server architecture</p>
+</li>
+<li>
+<p>Service interface abstracts the communication</p>
+<ul>
+<li>client only knows <em>what</em> a function does, not <em>how</em></li>
+<li>server implements procedure and executes</li>
+<li>interfaces are usually defined using IDL (Interface Definition
+Language)</li>
+</ul>
+</li>
+</ul>
+<h4 id="rpc-call-semantics"><a class="header" href="#rpc-call-semantics">RPC Call Semantics</a></h4>
+<p>RPC can be implemented via request-reply protocols</p>
+<ul>
+<li>needs stronger guarantees</li>
+</ul>
+<p>Local function calls are <em>exactly-once</em>, but RPC semantics can vary</p>
+<table><thead><tr><th>retransmit request message</th><th>duplicate filtering</th><th>re-execute procedure or retransmit reply</th><th>call semantics</th></tr></thead><tbody>
+<tr><td>no</td><td>n/a</td><td>n/a</td><td>maybe</td></tr>
+<tr><td>yes</td><td>no</td><td>re-execute procedure</td><td>at-least-once</td></tr>
+<tr><td>yes</td><td>no</td><td>re-execute</td><td>at-least-once</td></tr>
+<tr><td>yes</td><td>yes</td><td>retransmit</td><td>at-most-once</td></tr>
+</tbody></table>
+<h4 id="rpc-implementation"><a class="header" href="#rpc-implementation">RPC Implementation</a></h4>
+<p>Client</p>
+<ul>
+<li>for each procedure in service, there’s a <strong>stub</strong> procedure (aka
+<em>proxy</em>)</li>
+<li>stub procedure behaves like it’s running locally
+<ul>
+<li>actually marshals the procedure ID and arguments to the server</li>
+<li>this happens via communication module</li>
+</ul>
+</li>
+</ul>
+<p>Server</p>
+<ul>
+<li>the reverse operation (stub - call)</li>
+<li>dispatcher
+<ul>
+<li>selects appropriate stub to call based on procedure ID</li>
+</ul>
+</li>
+</ul>
+<p>Popular implementations:</p>
+<ul>
+<li>JSON-RPC</li>
+<li>gRPC (Google RPC)
+<ul>
+<li>RPC using protocol buffers <sup class="footnote-reference"><a href="#4">4</a></sup></li>
+</ul>
+</li>
+</ul>
+<h4 id="remote-method-invocation-1"><a class="header" href="#remote-method-invocation-1">Remote Method Invocation</a></h4>
+<p>RPC on objects within OOP</p>
+<ul>
+<li>mainly in Java</li>
+</ul>
+<p>Two main concepts:</p>
+<ul>
+<li>remote object references</li>
+<li>remote interfaces</li>
+</ul>
+<p>Popular implementations:</p>
+<ul>
+<li>Java RMI (industry leader for a while back in the 90s)</li>
+<li>CORBA (Common Object Request Broker Architecture)</li>
+</ul>
+<h3 id="rpc-example-in-python"><a class="header" href="#rpc-example-in-python">RPC Example in Python</a></h3>
+<pre><code class="language-python"># server.py
+import datetime
+from xmlrpc.server import SimpleXMLRPCServer
+import xmlrpc.client
+
+def today():
+    today = datetime.datetime.today()
+    return xmlrpc.client.DateTime(today)
+
+def add(x, y):
+    return x + y
+
+server = SimpleXMLRPCServer((&quot;localhost&quot;, 8000))
+
+print(&quot;listening on port 8000&quot;)
+
+server.register_function(today, &quot;today&quot;)
+server.register_function(add, &quot;add&quot;)
+
+server.serve_forever()
+</code></pre>
+<pre><code class="language-python"># client.py
+import xmlrpc.client
+import datetime
+
+proxy = xmlrpc.client.ServerProxy(&quot;http://localhost:8000/&quot;)
+
+today = proxy.today()
+converted = datetime.datetime.strptime(today.value, &quot;%Y%m%dT%H:%M:%S&quot;)
+
+added = proxy.add(1, 2)
+
+print(f&quot;Today: {converted.strftime('%d.%m.%Y, %H:%M')}&quot;)
+print(f&quot;Added: {added}&quot;)
+</code></pre>
+<h1 id="further-reading"><a class="header" href="#further-reading">Further Reading</a></h1>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p>Various socket programming resources:
+<a href="https://beej.us/guide/bgnet/html/index-wide.html">beej’s guide (C)</a> - 
+<a href="https://www.ibm.com/docs/en/zos/2.1.0?topic=interface-sample-c-socket-programs">ibm sample socket programs (C)</a> - 
+<a href="https://www.csd.uoc.gr/%7Ehy556/material/tutorials/cs556-3rd-tutorial.pdf">visuals-heavy ppt</a> - 
+<a href="https://www.binarytides.com/socket-programming-c-linux-tutorial/">code-heavy tutorial</a></p>
+</div>
+<div class="footnote-definition" id="2"><sup class="footnote-definition-label">2</sup>
+<p><a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">AWS - Making Retries Safe with Idempotent APIs</a></p>
+</div>
+<div class="footnote-definition" id="3"><sup class="footnote-definition-label">3</sup>
+<p><a href="https://users.cs.cf.ac.uk/Dave.Marshall/C/node33.html">Dave Marshall - Remote Procedure Calls (in C)</a></p>
+</div>
+<div class="footnote-definition" id="4"><sup class="footnote-definition-label">4</sup>
+<p><a href="https://grpc.io/">gRPC homepage with language-specific tutorials</a></p>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="indirect-communication-1"><a class="header" href="#indirect-communication-1">Indirect Communication</a></h1>
+<p>{:.note}
+Related Reading:
+- <a href="lectures/../chapter-6/index.html">Chapter 6 - Indirect Communication</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="notion-of-time-in-distributed-computing"><a class="header" href="#notion-of-time-in-distributed-computing">Notion of Time in Distributed Computing</a></h1>
+<p>{:.note}
+Related Reading:
+- <a href="lectures/../chapter-14/index.html">Chapter 14 - Time and Global States</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="logical-clocks-global-states"><a class="header" href="#logical-clocks-global-states">Logical Clocks, Global States</a></h1>
+<p>{:.note}
+Related Reading:
+- <a href="lectures/../chapter-14/logical-time.html">Chapter 14, Sections 14.4-14.5 - Logical Clocks, Global States</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="distributed-algorithms---mutual-exclusion"><a class="header" href="#distributed-algorithms---mutual-exclusion">Distributed Algorithms - Mutual Exclusion</a></h1>
+<p>{:.note}
+Related Reading:
+- <a href="lectures/../chapter-15/distributed-exclusion.html">15.1, 15.2 - Mutual Exclusion</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="distributed-algorithms---leader-election"><a class="header" href="#distributed-algorithms---leader-election">Distributed Algorithms - Leader Election</a></h1>
+<p>{:.note}
+Related Reading:
+- <a href="lectures/../chapter-15/elections.html">15.3 - Elections</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="distributed-coordination---group-communication"><a class="header" href="#distributed-coordination---group-communication">Distributed Coordination - Group Communication</a></h1>
+<p>{:.note}
+Related Reading:
+- <a href="lectures/../chapter-15/coordination.html">15.4 - Coordination and Agreement in Group Communication</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="distributed-coordination---consensus"><a class="header" href="#distributed-coordination---consensus">Distributed Coordination - Consensus</a></h1>
+<p>{:.note}
+Related Reading:
+- <a href="lectures/../chapter-15/consensus.html">15.5 - Consensus and Related Problems</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="distributed-file-systems-1"><a class="header" href="#distributed-file-systems-1">Distributed File Systems</a></h1>
+<p>{:.note}
+Related Reading:
+- <a href="lectures/../chapter-12/index.html">Chapter 12 - Distributed File Systems</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="spring-break"><a class="header" href="#spring-break">Spring Break</a></h1>
+<p>{:.note}
+stop studying please ur burn’t out</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="distributed-transactions-1"><a class="header" href="#distributed-transactions-1">Distributed Transactions</a></h1>
+<p>{:.note}
+Related Reading:
+- <a href="lectures/../chapter-17/index.html">Chapter 17 - Distributed Transactions</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="replication-1"><a class="header" href="#replication-1">Replication</a></h1>
+<p>{:.note}
+Related Reading:
+- <a href="lectures/../chapter-18/index.html">Chapter 18 - Replication</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="p2p-systems-1"><a class="header" href="#p2p-systems-1">P2P Systems</a></h1>
+<p>{:.note}
+Related Reading:
+- <a href="lectures/../chapter-10/index.html">Chapter 10 - Peer-to-Peer Systems</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="distributed-system-case-study"><a class="header" href="#distributed-system-case-study">Distributed System Case-Study</a></h1>
+<p>{:.note}
+Related Reading:
+- <a href="https://static.googleusercontent.com/media/research.google.com/en//archive/mapreduce-osdi04.pdf">Original MapReduce Paper</a>
+- <a href="lectures/../chapter-21/index.html">Chapter 21 - Google Case Study</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="final-exam"><a class="header" href="#final-exam">Final Exam</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="exercises"><a class="header" href="#exercises">Exercises</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-1"><a class="header" href="#chapter-1">Chapter 1</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-2"><a class="header" href="#chapter-2">Chapter 2</a></h1>
@@ -1411,9 +1564,8 @@ not break on valid table inputs for some reason but no time rn lol -->
     </tr>
 </table>
 <p>Since these both suck, what can we do?</p>
-<div class="def"  term="Logical Clock">
-<p>A clock that only measures the <strong>order of events</strong>.</p>
-</div>
+<p>{:.def term=“Logical Clock”}
+A clock that only measures the <strong>order of events</strong>.</p>
 <h2 id="lamport-diagrams"><a class="header" href="#lamport-diagrams">Lamport Diagrams</a></h2>
 <p>Also known as “spacetime diagrams”</p>
 <p>Example:
@@ -1425,10 +1577,9 @@ longer than \(n\) units of time to be delivered.
 <ul>
 <li>however there are interesting “partially synchronous” networks</li>
 </ul>
-<div class="def"  term="Asynchronous Network">
-<p>A network where there exists <strong>NO</strong> \(n\) such that no message takes
+<p>{:.def term=“Asynchronous Network”}
+A network where there exists <strong>NO</strong> \(n\) such that no message takes
 longer than \(n\) units of time to be delivered.</p>
-</div>
 <h2 id="happens-before-relationship-rightarrow"><a class="header" href="#happens-before-relationship-rightarrow">Happens-Before Relationship (\(\rightarrow\))</a></h2>
 <p>\(A \rightarrow B\)</p>
 <ul>
