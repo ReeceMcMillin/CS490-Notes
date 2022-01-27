@@ -5,7 +5,7 @@ multilingual = false
 src = "src"
 title = "CS490 - Distributed Systems"
 
-[preprocessor.classy]
+# [preprocessor.classy]
 
 [output.html]
 mathjax-support = true
